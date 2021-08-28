@@ -1,0 +1,204 @@
+<style>
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 5px;
+    }
+    td,th{
+        width:50%;
+    }
+
+    .repeat_x{
+        background:url('./img/sample.jpeg');
+        background-repeat: repeat-x;
+        height:220px;
+    }
+    .repeat_y{
+        background:url('./img/sample.jpeg');
+        background-repeat: repeat-y;
+        height:600px;
+    }
+    .repeat{
+        background:url('./img/sample.jpeg');
+        background-repeat: repeat;
+        height:400px;
+    }
+    table{
+        width:100%;
+    }
+
+    .bg-blue{ background-color: lightblue;}
+    
+    .bg-image { 
+        color: white;
+        background:url("https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat fixed;
+    }
+
+    .bg-position{
+        color: white;
+        background-image:url("https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position:25% 75%;
+    }
+    
+    </style> 
+  
+<div >
+    <h3>BACKGROUND</h3>
+    The CSS background properties are used define the background effects for element.<br>
+    rgba   -   a is for alpha,opacity or transparency 0(transparency) to 1(opaque)
+    <ol>
+        <li>background-color</li>
+        <li>background-image</li>
+        <li>background-repeat</li>
+        <li>background-attachment</li>
+        <li>background-position</li>
+        <li>background-size: 100% 100%; background-size: cover; background-size:contain;(contain image grow proportionally)</li>
+
+    </ol>
+    <h3>EXAMPLES</h3>
+    <div class="card bg-blue">
+        <h5 class="card-header default">background-color</h5>
+        <p>The background-color property specifies the background color of an element.</p>
+        <code>{ background-color: lightblue; }</code>
+    </div>
+    <div class="card ">
+        <h5 class="card-header">background-color opacity range</h5>
+        <p>The opacity property specifies the opacity/ transparency of an element. . It can take a value from 0.0-1.0. The lower value, the more transparent</p>
+        
+        <div style="display: inline-block;">
+            <div style="min-height: 70px;background : rgba(51, 170, 51, .1);">   
+                <code>{ background: rgba(51, 170, 51, .1); }</code>
+            </div>
+            <div style="min-height: 70px;background :rgba(51, 170, 51, .4);">
+                <code>{ background: rgba(51, 170, 51, .4); }</code>
+            </div>
+            <div style="min-height: 70px;background: rgba(51, 170, 51, .7) ;">
+                <code>{ background: rgba(51, 170, 51, .7); }</code>
+            </div>
+            <div style="min-height: 70px;background: rgba(51, 170, 51,  1) ;">
+                <code>{ background: rgba(51, 170, 51,  1);  }</code>
+            </div>
+        </div>
+        
+    </div>
+    <div class="card bg-image">
+        <h5 class="card-header">background-image</h5>
+        <ul>
+            <li>The background-image property specifies an image to use as the background of an element.</li>
+            <li>By default, the image is repeated so it covers the entire element.</li>
+        </ul>
+        <code>{ background-image:url("image.png") no-repeat fixed;}</code>
+    </div>
+    <div class="card " >
+        <h5 class="card-header">background-repeat</h5>
+        <p>By default, the background-image property repeats an image both horizontally and vertically.</p>
+        <p>Some images should be repeated only horizontally or vertically, or they will look strange.</p>
+        <code>{ background-repeat: repeat-x;}</code> - horizontally<br>
+        <code>{ background-repeat: repeat-y;}</code> - vertically<br>
+        <code>{ background-repeat: no-repeat;}</code> - image appears only once
+    </div>
+    <div class="card bg-position">
+        <h5 class="card-header">background-position</h5>
+        <ul>
+            <li>The background-position property sets starting position of a background image.</li>
+            <li>By default, a background-image is placed at the top-left corner of an element, and repeated both vertically and horizontally</li>
+        </ul>
+
+        <code>
+            {<br>
+        background-image:url("image.png");<br>
+        background-repeat: no-repeat;<br>
+        background-attachment: fixed;<br>
+        background-position:25% 75%;<br>
+            }
+        </code>
+        
+    </div>
+    <table>
+        <tr>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>
+                <ol>
+                    <li>left top</li>
+                    <li>left center</li>
+                    <li>left bottom</li>
+                    <li>right top</li>
+                    <li>right center</li>
+                    <li>right bottom</li>
+                    <li>center top</li>
+                    <li>center center</li>
+                    <li>center bottom</li>
+                </ol>
+            </td>
+            <td>If you only specify one keyword, the other value will be "center"</td>
+        </tr>
+        <tr>
+            <td>x% y%</td>
+            <td>The first value is the horizontal position and the second value is the vertical. The top left corner is 0% 0%. The right bottom corner is 100% 100%. If you only specify one value, the other value will be 50%.. Default value is: 0% 0%</td>
+        </tr>
+        <tr>
+            <td>xpos ypos</td>
+            <td>The first value is the horizontal position and the second value is the vertical. The top left corner is 0 0. Units can be pixels (0px 0px) or any other CSS units. If you only specify one value, the other value will be 50%. You can mix % and positions</td>
+        </tr>
+    </table><br>
+
+    <div class="card">
+        <h5 class="card-header">background-attachment</h5>
+        <p>The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)</p>   
+    </div>
+    <table>
+        <tr>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>scroll</td>
+            <td>The background image will scroll with the page. This is default</td>
+        </tr>
+        <tr>
+            <td>fixed</td>
+            <td>The background image will not scroll with the page</td>
+        </tr>
+        <tr>
+            <td>local</td>
+            <td>The background image will scroll with the element's contents</td>
+        </tr>
+        <tr>
+            <td>intial</td>
+            <td>Sets this property to its default value</td>
+        </tr>
+        <tr>
+            <td>inherit</td>
+            <td>Inherits this property from its parent element.</td>
+        </tr>
+    </table>
+    <div class="repeat_x">
+    </div>
+    <code>
+        {<br>
+    background-repeat: repeat-x;<br>
+        }</code>
+        <br>
+    <div class="repeat_y">
+    </div>
+    <code>
+    {<br>
+    background-repeat: repeat-y;<br>
+    }</code>
+    <br>
+    <div class="repeat">
+    </div>
+    <code>
+    {<br>
+    background-repeat: repeat;<br>
+    }</code>
+    <br>
+    
+
+</div>

@@ -1,0 +1,56 @@
+
+<div >
+    <h3>CSS Cascading Style Sheets</h3>
+    <ol>
+        <li>CSS is the language we use to style anHTML document. </li>
+        <li>CSS describes how HTML elements. should be displayed.</li>
+        <li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
+        <li>A CSS rule-set consists of a selector and a declaration block:
+            <ul>
+                <li>The selector points to the HTML element you want to style.</li>
+                <li>The declaration block contains one or more declarations separated by semicolons.</li>
+                <li>Each declaration includes a CSS property name and a value, separated by a colon. Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</li>
+            </ul>
+        </li>
+    </ol>
+    <h3>3 ways of inserting a style sheet</h3>
+    <ul>
+        <li>Inline CSS</li>
+        <li>Internal/Embedded CSS</li>
+        <li>External CSS</li>
+    </ul>
+
+    <div class="card ">
+        <h5 class="card-header">Inline CSS</h5>
+        <ul>
+            <li>An inline style may be used to apply a unique style for a single element.</li>
+            <li>To use inline styles, add the style attribute to the relevant element.</li>
+            <li> The style attribute can contain any CSS property.</li>
+        </ul>
+        <code class="card-footer">&ltp style="color:red;background:orange">Hello&ltp></code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">Internal/Embedded CSS</h5>
+        <ul>
+            <li>An internal style sheet may be used if one single HTML page has a unique style.</li>
+            <li>The internal style is defined inside the &ltstyle> element, inside the head section.</li>
+        </ul>
+        <code class="card-footer">&style> <br>
+        .class_name{<br>
+            color:red;<br>
+            background:orange;<br>
+        }<br>
+        &lt/style}
+        </code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">External CSS</h5>
+        <ul>
+            <li>An external style sheet is used to define the style for many HTML pages.</li>
+            <li>To use an external style sheet, add a link to it in the <head> section of each HTML page.</li>
+        </ul>
+    </div>
+
+</div>

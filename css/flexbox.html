@@ -1,0 +1,353 @@
+<style>
+    .flex-container{
+        display: flex;
+        border: 2px solid gainsboro;
+        height: 150px;
+        margin:15px 0px;
+   }
+
+    .flex-item{
+        background:pink;
+        padding: 5px;
+        border:2px solid lightblue;
+        margin:10px;
+        width: 50px;
+        height:60px;
+    }
+
+    .row{
+        flex-direction: row;
+    }
+
+    .column{
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .column-reverse{
+        flex-direction: column-reverse;
+        height: 200px;
+    }
+
+    .row-reverse{
+        flex-direction: row-reverse;
+    }
+
+    .justify-content-center{
+        justify-content: center;
+    }
+
+    .justify-content-end{
+        justify-content: flex-end;
+    }
+
+    .justify-content-start{
+        justify-content:flex-start;
+    }
+
+    .justify-content-between{
+        justify-content: space-between;
+    }
+
+    .justify-content-evenly{
+        justify-content: space-evenly;
+    }
+
+    .justify-content-around{
+        justify-content: space-around;
+    }
+
+    .align-items-center{
+        align-items: center;
+    }
+
+    .align-items-end{
+        align-items: flex-end;
+    }
+
+    .align-items-start{
+        align-items:flex-start;
+    }
+
+    .align-items-baseline{
+        align-items: baseline;/*text sameline*/
+    }
+
+    .flex-wrap{
+        flex-wrap: wrap;
+        width:120px;
+        height: 200px;
+    }
+
+    .flex-wrap-reverse{
+        flex-wrap: wrap-reverse;
+        width:120px;
+        height: 200px;
+    }
+
+    .flex-nowrap{
+        flex-wrap: nowrap;
+        width:100px;
+    }
+
+    .flex-flow-colwrap{
+        height: 150px;
+        flex-flow: column wrap;
+    }
+    
+    .item3{
+        order: 1;
+    }
+
+    .item1{
+        order: 2;
+    }
+
+    .item6{
+        order: 3;
+    }
+
+    .item4{
+        flex-grow: 3;
+    }
+
+    .item5{
+        flex-grow: 2;
+    }
+
+    .item6{
+        flex-shrink: 2;
+    }
+
+    .align-self-center{
+        align-self: center;
+    }
+
+    .align-self-center{
+        align-self: center;
+    }
+
+    .align-self-start{
+        align-self: flex-start;
+    }
+
+    .align-self-end{
+        align-self: flex-end;
+    }
+
+
+    </style> 
+  
+<div >
+    <h3>FLEXBOX</h3>
+    <img src="./img/flexbox.png"></img>
+    <ol>
+        <li>Flex direction is horizontal in defalult </li>
+        <li>In its simplest use, you only specify the horizontal shadow and the vertical shadow</li>
+        <li>flex-direction:row(default)/ column/ column-reverse/ row-reverse</li>
+        <li>justify-content:center/ flex-start(default)/ flex-end</li>
+        <li>align-items:flex-start(default),flex-end,center,stretch,baseline(in all center line among content)</li>
+        <li>flex-flow: flex-direction flex-wrap;</li>
+        <li>order1 - first , order6 - last , order default is 0</li>
+        <li>default flex-grow and flex-shrink is 1
+            <ul>
+                <li> wrap avoid if contents exceed the container in row or col ,flex-wrap=wrap ,wrap-reverse,nowrap(default)</li>
+                <li>flex-grow default(1) - help to cover all remaining spaces i.e equal space 5- 5 times extra sapce taken</li>
+                <li>stop all not allow to sthrink   0 means not shrink</li>
+            </ul>
+        </li>
+        <li>flex-basis:100px; for flex-item - min or initial length of item</li>
+        <li>flex:grow shrink basis;  example: flex:5 1 100px;</li>
+        
+    </ol>
+
+    <div class="flex-container row">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+    </div>
+    <code>
+        <pre>
+<b>HTML</b>
+&ltdiv class="flex-container">
+    &ltdiv class="flex-item">1&lt/div>
+    &ltdiv class="flex-item">2&lt/div>
+&lt/div><br>
+<b>CSS</b>
+.flex-container{
+    display: flex;
+    border: 2px solid gainsboro;
+    height: 150px;
+    margin:15px 0px;
+}
+
+.flex-item{
+    background:pink;
+    padding: 5px;
+    border:2px solid lightblue;
+    margin:10px;
+    width: 50px;
+    height:60px;
+}
+        </pre>
+    </code>
+    
+    <h3>FLEX CONTAINER PROPERTIES</h3>
+    <div class="flex-container row">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+        .row{ flex-direction: row; }
+        </code>
+    </div>
+
+    <div class="flex-container column">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+        .column{ flex-direction: column; }
+        </code>
+    </div>
+
+
+    <div class="flex-container column-reverse">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+        .column-reverse{ flex-direction: column-reverse; }
+        </code>
+    </div>
+
+    <div class="flex-container row-reverse">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+        .row-reverse{ flex-direction: row-reverse; }
+        </code>
+    </div>
+
+    <div class="flex-container justify-content-center align-items-center">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+            .justify-content-center{ justify-content: center;}<br>
+            .align-items-center{ align-items: center;}
+        </code>
+    </div>
+
+    <div class="flex-container justify-content-end align-items-end">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+            .justify-content-end{ justify-content: flex-end;}<br>
+            .align-items-end{ align-items: flex-end;}
+        </code>
+    </div>
+
+    <div class="flex-container justify-content-start align-items-start">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+            .justify-content-end{ justify-content: flex-start;}<br>
+            .align-items-end{ align-items: flex-start;}
+        </code>
+    </div>
+
+    <div class="flex-container justify-content-evenly">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+            .justify-content-end{ justify-content: space-evenly;}<br>
+        </code>
+    </div>
+
+    <div class="flex-container justify-content-between">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+            .justify-content-end{ justify-content: space-between;}<br>
+        </code>
+    </div>
+
+    <div class="flex-container justify-content-around">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+            .justify-content-end{ justify-content: space-around;}<br>
+        </code>
+    </div>
+
+    <div class="flex-container align-items-baseline">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <code>
+            .align-items-end{ align-items: baseline;}<br>
+        </code> 
+    </div><br>
+
+    <code>
+        .flex-wrap{ flex-wrap: wrap; width:120px; height: 200px;}<br>
+    </code>
+    <div class="flex-container flex-wrap">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+    </div><br>
+
+    <code>
+        .flex-nowrap{ flex-wrap: nowrap; width:100px; }<br>
+    </code>
+    <div class="flex-container flex-nowrap">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+    </div><br>
+
+    <code>
+        .flex-wrap-reverse{ flex-wrap: wrap-reverse; width:120px; height: 200px;}<br>
+    </code>
+    <div class="flex-container flex-wrap-reverse">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>     
+    </div><br>
+
+    <code>
+        .flex-flow-colwrap{ height: 150px; flex-flow: column wrap;}<br>
+    </code>
+    <div class="flex-container column flex-flow-colwrap">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+    </div><br>
+
+    <h3>FLEX ITEMS PROPERTIES</h3>
+    <div class="flex-container">
+        <div class="flex-item item1">1</div>
+        <div class="flex-item item2 align-self-start">2</div>
+        <div class="flex-item item3 align-self-center">3</div>
+        <div class="flex-item item4 align-self-end">4</div>
+        <div class="flex-item item5">5</div>
+        <div class="flex-item item6">6</div>
+    </div>
+    <code>
+<b>HTML</b><br>
+&ltdiv class="flex-container"><br>
+&nbsp&nbsp&ltdiv class="flex-item item1">1&lt/div><br>
+&nbsp&nbsp&ltdiv class="flex-item item2 align-self-start">2&lt/div><br>
+&nbsp&nbsp&ltdiv class="flex-item item3 align-self-center">3&lt/div><br>
+&nbsp&nbsp&ltdiv class="flex-item item4 align-self-end">4&lt/div><br>
+&nbsp&nbsp&ltdiv class="flex-item item5">5&lt/div><br>
+&nbsp&nbsp&ltdiv class="flex-item item6">6&lt/div><br>
+&lt/div><br><br>
+<b>CSS</b><br>
+.item3{ order: 1;}<br>
+.item1{ order: 2;}<br>
+.item6{ order: 3;}<br>
+.item4{ flex-grow: 3;}<br>
+.item5{ flex-grow: 2;}<br>
+.item6{ flex-shrink: 2;}<br>
+.align-self-center{ align-self: center; }<br>
+.align-self-center{ align-self: center; }<br>
+.align-self-start{ align-self: flex-start;}<br>
+.align-self-end{ align-self: flex-end; }<br>
+
+    </code>
+    
+
+</div>

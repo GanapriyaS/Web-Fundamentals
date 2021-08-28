@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <title>Home</title>
+</head>
+<style>
+
+
+
+@media screen and (min-width: 800px){
+.animate_text{
+  animation: translate_text 5s ease 1s infinite;
+  color:mediumspringgreen; 
+  font-size:8rem;
+}
+
+@keyframes translate_text{
+  25% {color:gold; font-size:7rem;}
+  50% {color: moccasin; font-size:2rem;}
+  75% {color:mediumspringgreen; font-size:8rem;transform: rotate(180deg);}
+  100% {color: gainsboro; font-size: 3rem;}
+}
+}
+</style>
+<body>
+    <header style="position: fixed;width: 100%;background-color: #ddd;">
+        <nav>
+        <ul class="navbar">
+            <li id="logo"><a  href="#home">LOGO</a></li>
+            <li ><a  href="javascript:void(0);" onclick="showNavBarlg('html','css','js')">HTML</a></li>
+            <li><a  href="javascript:void(0);" onclick="showNavBarlg('css','html','js')">CSS</a></li>
+            <li><a  href="javascript:void(0);" onclick="showNavBarlg('js','html','css')">JS</a></li>
+            <li><a  href="https://github.com/GanapriyaS/Web_Fundamentals" ><i class="fab fa-github-alt"> CODE</i></a></li>
+            <li id="bar"><a href="javascript:void(0);" onclick="showNavBar()">&#9776;</a></li>
+          </ul>
+          <ul id="navLinks">
+            <li> <a  href="javascript:void(0);" class="openbtn" onclick="openSideNav('sidebar-html')">HTML</a></li>
+            <li><a  href="javascript:void(0);" onclick="openSideNav('sidebar-css')">CSS</a></li>
+            <li><a  href="javascript:void(0);" onclick="openSideNav('sidebar-js')">JS</a></li>
+            <li><a  href="https://github.com/GanapriyaS/Web_Fundamentals"><i class="fab fa-github-alt"> CODE</i></a></li>
+            
+          </ul>
+          </nav>
+    </header>
+    <section>
+        <ul class="sidenav-lg-css sidenav-lg" id="css" >
+            <li><a href="javascript:void(0);" onclick="content('./css/css.html')">Home</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/selectorproperties.html')">Selectors and Properties</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/textshadow.html')">Text Shadow</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/boxshadow.html')">Box Shadow</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/fonttext.html')">Font and text</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/background.html')">Background</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/gradients.html')">Gradients</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/flexbox.html')">Flexbox</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/grid.html')">Grid Layout</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/transition.html')">Transition</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/transformation.html')">Transformation</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/animation.html')">Animation</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/position.html')">Positioning</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/dimensions.html')">Dimensions</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/boxmodel.html')">Box Model</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/multicolumn.html')">Multi-column Layout</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./css/media.html')">Media types</a></li>
+          </ul>
+          <ul class="sidenav-lg-html sidenav-lg" id="html">
+            <li><a href="javascript:void(0);" onclick="content('./html/html.html')">Home</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/header.html')">&ltheader&gt</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/title.html')">&lttitle&gt</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/head.html')">&lthead&gt</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/nav.html')">&ltnav&gt</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/body.html')">&ltbody&gt</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/section.html')">&ltsection&gt</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/paragraph.html')">&ltparagraph&gt</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/break.html')">&ltbr&gt&nbsp&lthr&gt</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/comments.html')">comments</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/article.html')">&ltarticle&gt</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/input.html')">&ltinput&gt</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./html/div.html')">&ltdiv&gt</a></li>
+          </ul>
+          <ul class="sidenav-lg-js sidenav-lg" id="js">
+            <li><a href="javascript:void(0);" onclick="content('./js/home.html')">Home</a></li>
+          </ul>
+          <div id="sidebar-html" class="sidenav-sm">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav('sidebar-html')">×</a>
+            <a href="javascript:void(0);" onclick="content('./html/html.html')">Home</a>
+            <a href="javascript:void(0);" onclick="content('./html/header.html')">&ltheader&gt</a>
+            <a href="javascript:void(0);" onclick="content('./html/title.html')">&lttitle&gt</a>
+            <a href="javascript:void(0);" onclick="content('./html/head.html')">&lthead&gt</a>
+            <a href="javascript:void(0);" onclick="content('./html/nav.html')">&ltnav&gt</a>
+            <a href="javascript:void(0);" onclick="content('./html/body.html')">&ltbody&gt</a>
+            <a href="javascript:void(0);" onclick="content('./html/section.html')">&ltsection&gt</a>
+            <a href="javascript:void(0);" onclick="content('./html/paragraph.html')">&ltparagraph&gt</a>
+            <a href="javascript:void(0);" onclick="content('./html/break.html')">&ltbr&gt&nbsp&lthr&gt</a>
+            <a href="javascript:void(0);" onclick="content('./html/comments.html')">comments</a>
+            <a href="javascript:void(0);" onclick="content('./html/article.html')">&ltarticle&gt</a>
+            <a href="javascript:void(0);" onclick="content('./html/input.html')">&ltinput&gt</a>
+            <a href="javascript:void(0);" onclick="content('./html/div.html')">&ltdiv&gt</a>
+          </div>
+          <div id="sidebar-css" class="sidenav-sm">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav('sidebar-css')">×</a>
+            <a href="javascript:void(0);" onclick="content('../css/css.html')">Home</a>
+            <a href="javascript:void(0);" onclick="content('./css/selectorproperties.html')">Selectors and Properties</a>
+            <a href="javascript:void(0);" onclick="content('./css/textshadow.html')">Text Shadow</a>
+            <a href="javascript:void(0);" onclick="content('./css/boxshadow.html')">Box Shadow</a>
+            <a href="javascript:void(0);" onclick="content('./css/fonttext.html')">Font and text</a>
+            <a href="javascript:void(0);" onclick="content('./css/background.html')">Background</a>
+            <a href="javascript:void(0);" onclick="content('./css/gradients.html')">Gradients</a>
+            <a href="javascript:void(0);" onclick="content('./css/flexbox.html')">Flexbox</a>
+            <a href="javascript:void(0);" onclick="content('./css/grid.html')">Grid Layout</a>
+            <a href="javascript:void(0);" onclick="content('./css/transition.html')">Transition</a>
+            <a href="javascript:void(0);" onclick="content('./css/transformation.html')">Transformation</a>
+            <a href="javascript:void(0);" onclick="content('./css/animation.html')">Animation</a>
+            <a href="javascript:void(0);" onclick="content('./css/position.html')">Positioning</a>
+            <a href="javascript:void(0);" onclick="content('./css/dimensions.html')">Dimensions</a>
+            <a href="javascript:void(0);" onclick="content('./css/boxmodel.html')">Boxmodel</a>
+            <a href="javascript:void(0);" onclick="content('./css/multicolumn.html')">Multi-column Layout</a>
+            <a href="javascript:void(0);" onclick="content('./css/media.html')">Media types</a>
+            
+          </div>
+          <div id="sidebar-js" class="sidenav-sm">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav('sidebar-js')">×</a>
+            <a href="javascript:void(0);" onclick="content('./js/home.html')">Home</a>
+          </div>
+    </section>
+    <section id="main" style="padding-top: 50px;">
+      <div style="height: 90vh; display:flex ;justify-content: center; align-items: center; ">
+        <h1 class="animate_text">WELCOME.......!</h1>
+      </div>
+       
+    </section>
+    
+</body>
+<script src="./js/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  function showNavBarlg(x,y,z) {
+    var u=document.getElementById(x);
+    var v=document.getElementById(y);
+    var w=document.getElementById(z);
+    u.style.display="block";
+    v.style.display="none";
+    w.style.display="none";
+  }
+
+    function content(x){
+        $(main).load(x);
+    }
+  
+    </script>
+</html>

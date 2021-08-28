@@ -1,0 +1,63 @@
+<style>
+    @media print and (min-width:480px) { 
+        body { font-style: italic;
+            background:wheat; }
+    }
+</style> 
+  
+<div >
+    <h3>MEDIA TYPES</h3>
+    <p>One of the most important features of style sheets is that they specify how a document is to be presented on different media:
+    <ul>
+        <li>on the screen</li>
+        <li>on paper</li>
+        <li>with a speech synthesizer</li>
+        <li>with a braille device</li>
+    </ul>
+    </p> 
+    <ol>
+        <li>Certain CSS properties are only designed for certain media</li>
+        <li>e.g., the page-break-before' property only applies to paged media.</li>
+        <li>On occasion, however, style sheets for different media types may share a property, but require different values for that property.</li>
+        <li>For example, the 'font-size' property is useful both for screen and print media.</li>
+    </ol>
+
+    <h3>Specifying media-dependent style sheets</h3>
+    <p>Specify the target medium from a style sheet with the @media or @import at rules.</p>
+    <code>
+        @import url("style.css") screen;<br>
+        @media print{<br>
+            /*style sheet for print goes here */<br>
+        }<br>
+    </code>
+    <p> Specify the target medium within the document language. For example, in HTML 4, the "media" attribute on the LINK element specifies the target media of an external style sheet:</p>
+    <code>
+        &ltLINK REL="stylesheet" TYPE="text/css" MEDIA="print, handheld" HREF="style.css">
+    </code>
+
+    <h3>EXAMPLES</h3>
+    <div class="card ">
+        <h5 class="card-header font_web">@media</h5>
+        <code>
+            @media print { <br>
+                body { font-size: 10pt } <br>
+            }<br><br>
+        
+            @media screen { <br>
+                body { font-size: 13px } <br>
+            }<br><br>
+        
+            @media screen,print { <br>
+                body { line-height: 1.2 } <br>
+            }<br><br>
+
+            @media print and (min-width:480px) { <br>
+                body { font-style:italic;
+                background:wheat; } <br>
+            }<br><br>
+        
+        </code>
+    </div>
+   
+
+</div>

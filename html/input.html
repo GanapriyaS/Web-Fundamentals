@@ -1,0 +1,248 @@
+<style>
+
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+</style>
+
+
+<div >
+<h3>&ltinput&gt</h3>
+<ol>  
+    <li>The < input > tag specifies an input field where the user can enter data.</li>
+    <li>The < input > element is the most important form element.</li>
+    <li>The < input > element can be displayed in several ways, depending on the type attribute.</li>
+</ol>
+
+
+<div class="card ">
+    <h5 class="card-header default">text</h5>
+    <p>defines a single-line text field.</p>
+    <p>The default width of the text field is 20 characters.</p>
+</div>
+
+<div class="card ">
+    <h5 class="card-header">password</h5>
+    <p>Defines a password field (characters are masked).</p>
+</div>
+
+<div class="card ">
+    <h5 class="card-header">button</h5>
+    <p>The type attribute specifies the type of button</p>
+    <p>Submit or request
+        <ul>
+            <li>submit - The button is a submit button (submits form-data) </li>
+            <li> reset - The button is a reset button (resets the form-data to its initial values)</li>
+        </ul>
+    </p>
+</div>
+
+<div class="card ">
+    <h5 class="card-header">checkbox</h5>
+    <ul>
+        <li>Defines a checkbox. </li>
+        <li>The checkbox is shown as a square box that is ticked (checked) when activated.</li>
+        <li>Checkboxes are used to let a user select one or more options of a limited number of choices.</li>
+    </ul>
+</div>
+
+<div class="card ">
+    <h5 class="card-header">radio</h5>
+    <ul>
+        <li>Defines a radio button.</li>
+        <li>Radio buttons are normally presented in radio groups (a collection of radio buttons describing a set of related options). Only one radio button in a group can be selected at the same time.</li>
+        <li>Note: The radio group must have share the same name to be treated as a group. Once the radio group is created, selecting any radio button in that group automatically deselects any other selected radio button in the same group.</li>
+    </ul> 
+</div>
+
+<div class="card ">
+    <h5 class="card-header">date</h5>
+    <ul>
+        <li>Defines a date picker.</li>
+        <li>The resulting value includes the year, month, and day in the format mm/dd/yyyy</li>
+    </ul> 
+</div>
+
+<div class="card ">
+    <h5 class="card-header">hidden</h5>
+    <ul>
+        <li>Defines a hidden input field.</li>
+        <li>A hidden field let web developers include data that cannot be seen or modified by users when a form is submitted.</li>
+        <li>A hidden field often stores what database record that needs to be updated when the form is submitted.</li>
+    </ul> 
+</div>
+
+
+<table style="width:100%">
+    <tr>
+        <th>S.No</th>
+        <th>Input type</th>
+        <th>Examples</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>&ltinput type="button"></td>
+        <td><input type="button"></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>&ltinput type="submit"></td>
+        <td><input type="submit"></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>&ltinput type="reset"></td>
+        <td><input type="reset"></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>&ltinput type="month"></td>
+        <td><input type="month"></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>&ltinput type="week"></td>
+        <td><input type="week"></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>&ltinput type="url"></td>
+        <td><input type="url"></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>&ltinput type="time"></td>
+        <td><input type="time"></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>&ltinput type="date"></td>
+        <td><input type="date"></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>&ltinput type="color"></td>
+        <td><input type="color"></td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>&ltinput type="email"></td>
+        <td><input type="email"></td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>&ltinput type="file"></td>
+        <td><input type="file"></td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>&ltinput type="hidden"></td>
+        <td><input type="hidden"></td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>&ltinput type="number"></td>
+        <td><input type="number"></td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>&ltinput type="password"></td>
+        <td><input type="password"></td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>&ltinput type="search"></td>
+        <td><input type="search"></td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>&ltinput type="range"></td>
+        <td><input type="range"></td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>&ltinput type="tel"></td>
+        <td><input type="tel"></td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>&ltinput type="text"> (default value)</td>
+        <td><input type="text"></td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>&ltinput type="datetime-local"></td>
+        <td><input type="datetime-local"></td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>&ltinput type="image"></td>
+        <td><input type="image"></td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>&ltinput type="checkbox"></td>
+        <td><input type="checkbox" id="box1" name="box1" value="1">
+             <label for="box1"> 1</label><br>
+            <input type="checkbox" id="box2" name="box2" value="2">            
+            <label for="box2"> 2</label><br>
+            <input type="checkbox" id="box3" name="box3" value="3">
+            <label for="box3">3</label>
+        </td>
+    </tr>
+    <tr>
+        <td>22</td>
+        <td>&ltinput type="radio"></td>
+        <td><input type="radio" id="radio1" name="radio" value="1">
+             <label for="radio1">1</label><br>
+             <input type="radio" id="radio2" name="radio" value="2">
+             <label for="radio2">2</label><br>
+             <input type="radio" id="radio3" name="radio" value="3">
+             <label for="radio3">3</label><br>
+    </tr>
+
+</table>
+
+<h3>&ltform&gt&nbsp&ltlabel&gt</h3>
+<div class="card ">
+    <h5 class="card-header">Label</h5>
+    <p>The &ltlabel> tag defines a label for several elements</p>
+</div>
+<table style="width:100%">
+<tr>
+    <th>CODE</th>
+    <th>OUTPUT</th>
+</tr>
+<tr>
+    <td style="text-align: left;">
+        <code>
+            &lt!DOCTYPE html><br>
+            &lthtml><br>
+            &ltbody><br>
+            &ltform><br>
+            &ltlabel for "birthday">Birthday:&lt/label> <br>
+            &ltinput type="date" id="birthday" name="birthday"><br>
+            &ltbr><br>
+            &ltinput type="submit"><br>
+            &ltinput type="reset"><br>
+            &lt/form><br>
+            &lt/body> <br>
+            &lt/html><br>
+        </code>
+    </td>
+    <td>
+        <form>
+            <br><br>
+            <label for "birthday">Birthday:</label> <input type="date" id="birthday" name="birthday"><br>
+            <br>
+            <input type="submit">
+            <input type="reset">
+        </form>
+    </td>
+</tr>
+</table>
+</div>

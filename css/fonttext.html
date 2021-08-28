@@ -1,0 +1,80 @@
+<style>
+    .font{
+                font-family: 'PT Mono', monospace;
+                text-transform: capitalize;
+                text-align: center;
+                text-decoration:underline;
+                font-size: 1.08em;
+                font-weight: bold; /*font-weight:300;*/
+                font-style: oblique;
+            }
+    @font-face { 
+        font-family: Font; 
+        src: url("./font/Pacifico-Regular.ttf");
+    }
+
+    .font_web{
+        font-family: Font;
+    }
+
+    </style> 
+  
+<div >
+    <h3>FONT & TEXT MANIPULATION</h3>
+    <ol>
+        <li>Priority pc>pt>px </li>
+        <li>Absolute unit
+            <ul>
+                <li>px/mm/cm</li>
+            </ul>
+        </li>
+        <li>Relative unit
+            <ul>
+                <li>em depend on parent element</li>
+                <li>1 vw or vh = one percent of body (total viewport)</li>
+            </ul>
+        </li>
+    </ol>
+    <h3>EXAMPLES</h3>
+    <div class="card ">
+        <h5 class="card-header font">Bold Italic Heading</h5>
+        <code>{ <br>
+                font-family: 'PT Mono', monospace;<br>
+                text-transform: capitalize;<br>
+                text-align: center;<br>
+                text-decoration:underline;<br>
+                font-size: 1.08em;<br>
+                font-weight: bold; /*font-weight:300;*/<br>
+                font-style: oblique;<br>
+              }</code>
+    </div><br>
+
+    <h3>WEB FONTS</h3>
+    <ul>
+        <li>Web fonts allow Web designers to use fonts that are not installed on the user's computer.</li>
+        <li>When you have found/bought the font you wish to use, just include the font file on your web server, and it will be automatically downloaded to the user when needed.</li>
+        <li>Your "own" fonts are defined within the CSS @font-face rule.</li>
+    </ul>
+    <p>In the @font-face rule
+        <ol>
+            <li>first define a name for the font</li>
+            <li>then point to the font file.</li>
+        </ol>
+    </p>
+    <h3>EXAMPLES</h3>
+    <div class="card ">
+        <h5 class="card-header font_web">Web font  -  Pacifico style from google fonts</h5>
+        <code>
+            @font-face { <br>
+                font-family: Font; <br>
+                src: url("./font/Pacifico-Regular.ttf");<br>
+            }<br><br>
+        
+            .font_web{<br>
+                font-family: Font;<br>
+            }<br>
+              </code>
+    </div>
+   
+
+</div>

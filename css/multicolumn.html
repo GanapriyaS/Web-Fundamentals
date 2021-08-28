@@ -1,0 +1,146 @@
+<style>
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 5px;
+    }
+
+    table{
+        width:100%;
+    }
+
+    .newspaper{
+                column-count: 3;
+                column-gap: 40px;
+                column-rule-style: solid;
+                column-rule-width: 3px;
+                column-rule-color:orange;
+            }
+    .newspaper1{
+        column-count: 3;
+        column-gap: 40px;
+        column-rule:3px dotted deeppink;
+    }
+
+    .newspaper2{
+        column-count: 3;
+        column-gap: 40px;
+        column-rule:3px dashed deepskyblue;
+    }
+
+    .span_one{
+        
+        column-span: 1;
+    }
+    .span_all{
+        column-span: all;
+    }
+    .column_width{
+        column-width:150px;
+    }
+
+    </style> 
+  
+<div >
+    <h3>MULTI-COLUMN LAYOUT</h3>
+    <p>CSS Multi-column Properties
+        <ul>
+            <li>column-count</li>
+            <li>column-gap</li>
+            <li>column-rule-style</li>
+            <li>column-rule-width</li>
+            <li>column-rule-color</li>
+            <li>column-rule</li>
+            <li>column-span</li>
+            <li>column-width</li>
+        </ul>
+    </p>
+    <h3>EXAMPLE</h3>
+    <div class="newspaper">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quaerat alias a deleniti repudiandae modi explicabo numquam beatae, obcaecati temporibus. Exercitationem, quae libero obcaecati quia at atque magni distinctio omnis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, sit veritatis excepturi odio quas vel animi enim incidunt, velit est quos, officia dolores quo odit earum aliquam. Cumque, id dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolore, voluptatem nostrum fuga doloremque hic doloribus deserunt nobis iure maiores pariatur accusamus in repellat. Repellendus quae nobis officia debitis numquam!
+    </div><br>
+    <code>.newspaper{<br>
+        column-count: 3;<br>
+        column-gap: 40px;<br>
+        column-rule-style: solid;<br>
+        column-rule-width: 3px;<br>
+        column-rule-color:orange;<br>
+    }</code><br>
+   
+    <div class="card ">
+        <h5 class="card-header">column-span</h5>
+        <p>Specify How Many Columns an Element Should Span</p>
+        <code>
+            .newspaper1{<br>
+                column-count: 3;<br>
+                column-gap: 40px;<br>
+                column-rule:3px dotted deeppink;}<br><br>
+        
+            .newspaper2{<br>
+                column-count: 3;<br>
+                column-gap: 40px;<br>
+                column-rule:3px dashed deepskyblue;}<br><br>
+        
+            .span_one{ column-span: 1;}<br><br>
+            .span_all{ column-span: all;}<br>
+              </code>
+    </div>
+    <h3>EXAMPLE</h3>
+    <div class="newspaper1">
+        <h3 class="span_all" style="background:#ddd">column-span:all;</h3>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quaerat alias a deleniti repudiandae modi explicabo numquam beatae, obcaecati temporibus. Exercitationem, quae libero obcaecati quia at atque magni distinctio omnis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, sit veritatis excepturi odio quas vel animi enim incidunt, velit est quos, officia dolores quo odit earum aliquam. Cumque, id dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolore, voluptatem nostrum fuga doloremque hic doloribus deserunt nobis iure maiores pariatur accusamus in repellat. Repellendus quae nobis officia debitis numquam!
+    </div>
+    <br>
+    <div class="newspaper2">
+        <h3 class="span_one" style="background:#ddd">column-span:1;</h3>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quaerat alias a deleniti repudiandae modi explicabo numquam beatae, obcaecati temporibus. Exercitationem, quae libero obcaecati quia at atque magni distinctio omnis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, sit veritatis excepturi odio quas vel animi enim incidunt, velit est quos, officia dolores quo odit earum aliquam. Cumque, id dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolore, voluptatem nostrum fuga doloremque hic doloribus deserunt nobis iure maiores pariatur accusamus in repellat. Repellendus quae nobis officia debitis numquam!
+    </div>
+    <br>
+    <div class="card ">
+        <h5 class="card-header">column-width</h5>
+         
+        <ul>
+            <li>The number of columns will be the minimum number of columns needed to show all the content across the element.</li>
+            <li>column-width is a flexible property.</li>
+            <li>Think of column-width as a minimum width suggestion for the browser.</li>
+            <li>Once the browser cannot fit at least two columns at your specified width then the columns will stop and drop into a single column.</li>
+            <li>Specify column width</li>
+        </ul>
+        <code>
+            .column_width{<br>
+                column-width:150px;<br>
+               }<br>
+              </code>
+    </div>
+    <h3>EXAMPLE</h3>
+    <div class="column_width">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quaerat alias a deleniti repudiandae modi explicabo numquam beatae, obcaecati temporibus. Exercitationem, quae libero obcaecati quia at atque magni distinctio omnis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, sit veritatis excepturi odio quas vel animi enim incidunt, velit est quos, officia dolores quo odit earum aliquam. Cumque, id dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolore, voluptatem nostrum fuga doloremque hic doloribus deserunt nobis iure maiores pariatur accusamus in repellat. Repellendus quae nobis officia debitis numquam!
+    </div>
+    <br>
+    <table>
+
+        <tr>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>auto</td>
+            <td>Default value. The column width will be determined by the browser</td>
+        </tr>
+        <tr>
+            <td>length</td>
+            <td>A length that specifies the width of the columns. The number of columns will be the minimum number of columns needed to show all the content across the element.</td>
+        </tr>
+        <tr>
+            <td>intial</td>
+            <td>Sets this property to its default value</td>
+        </tr>
+        <tr>
+            <td>inherit</td>
+            <td>Inherits this property from its parent element.</td>
+        </tr>
+    </table>
+   
+
+</div>

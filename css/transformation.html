@@ -1,0 +1,278 @@
+<style>
+    .uppercase{
+        text-transform: uppercase;
+    }
+    .lowercase{
+        text-transform: lowercase;
+    }
+    .capitalize{
+        text-transform: capitalize;
+    }
+    .transform{
+        width: 100px;
+        height: 100px;
+        background: mediumturquoise;
+    }
+    .translate:hover{ transform: translate(50px, 50px); }
+    .rotate:hover{ transform: rotate(-20deg); }
+    .scalei:hover{ transform: scale(2, 2); }
+    .scaled:hover{ transform: scale(0.5, 0.5); } 
+    .scalex:hover{ transform: scaleX(2); }
+    .scaley:hover{ transform: scaleY(2); }
+    .skewx:hover{ transform: skewX(20deg); }
+    .skewy:hover{ transform: skewY(20deg); }
+    .skew:hover{ transform: skew(20deg, 10deg); }
+    .matrix:hover{ transform: matrix(1, -0.3, 0, 1, 0, 0); }
+    .origin:hover{
+        transform: rotate(45deg);
+        transform-origin: 20% 40%;
+    }
+    .style{
+        transform: rotateX(45deg);
+        transform-style: preserve-3d;
+    }
+
+    .perspective{
+        perspective: 100px;
+    }
+
+    .perspective-origin-left{
+        perspective-origin: left;
+    }
+
+    .perspective-origin-br{
+        perspective-origin: bottom right;
+    }
+
+    .perspective-origin-per{
+        perspective-origin: -90%;
+    }
+
+    .perspective-none{
+        perspective: none;
+    }
+
+    .sample{
+        position: relative;
+        height: 100px;
+        width: 100px;
+        margin-left: 60px;
+        border: 1px solid blue;
+    }
+
+    .backface-visibility-hidden{
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+    }
+
+    .backface-visibility-visible{
+        transform: rotateY(180deg);
+        backface-visibility: visible;
+    }
+
+    .rotatex{
+        transform: rotateX(150deg);
+    }
+
+    .rotatey{
+        transform: rotateY(150deg);
+    }
+
+    .rotatez{
+        transform: rotateZ(90deg);
+    }
+
+    .rotateX:hover{
+        transition-duration: 2s;
+        transform: rotateX(150deg);
+    }
+
+    .rotateY:hover{
+        transition-duration: 2s;
+        transform: rotateY(150deg);
+    }
+
+    .rotateZ:hover{
+        transition-duration: 2s;
+        transform: rotateZ(90deg);
+    }
+</style> 
+  
+<div >
+    <h3>TRANSFORMATIONS</h3>
+    <ol>
+        <li>Can add shadow to text and to elements The CSS text-shadow property applies shadow to text. </li>
+        <li>In its simplest use, you only specify the horizontal shadow and the vertical shadow</li>
+    </ol>
+    <h3>EXAMPLES</h3>
+    <div class="card ">
+        <h5 class="card-header default">Text transform</h5>
+        <h3 class="uppercase">Hello</h3>
+        <h3 class="lowercase">Hello</h3>
+        <h3 class="capitalize">hello</h3>
+        <code>.uppercase{ text-transform: uppercase; }<br>
+        .lowercase{text-transform: lowercase;}<br>
+        .capitalize{text-transform: capitalize;}</code>
+    </div>
+
+    <h3>CSS 2D transforms allow you to move, rotate, scale, and skew elements.</h3>
+    <p>translate(),translateX(),translateY(),rotate(),scaleX(),scaleY(),scale(),skewX(),skewY(),skew(),matrix()</p>
+    <div class="card ">
+        <h5 class="card-header">2D Transition</h5>
+        <p>The translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis).</p>
+        <div class="transform translate">translate()</div>
+        <code>.translate:hover{ transform: translate(50px, 50px); }</code><br><br>
+       
+        <p>The rotate() method rotates an element clockwise or counter-clockwise according to a given degree.</p>
+        <div class="transform rotate">rotate()</div>
+        <code>.rotate:hover{ transform: rotate(-20deg); }</code><br><br>
+
+        <p>The scale() method increases or decreases the size of an element (according to the parameters given for the width and height).</p>
+        <div class="transform scaled">scale()</div>
+        <code>.scalei:hover{ transform: scale(2, 2); }</code><br><br>
+        <div class="transform scalei">scale()</div>
+        <code>.scaled:hover{ transform: scale(0.5, 0.5); }</code>
+        <br><br>
+
+        <p>The scaleX() method increases or decreases the width of an element.</p>
+        <div class="transform  scalex">scaleX()</div>
+        <code>.scalex:hover{ transform: scaleX(2); }</code><br><br>
+
+        <p>The scaleY() method increases or decreases the height of an element.</p>
+        <div class="transform scaley">scaleY()</div>
+        <code>.scaley:hover{ transform: scaleY(2); }</code><br><br>
+
+        <p>The skewX() method skews an element along the X-axis by the given angle.</p>
+        <div class="transform skewx">skewX()</div>
+        <code>.skewx:hover{ transform: skewX(20deg); }</code><br><br>
+
+
+        <p>The skewY() method skews an element along the Y-axis by the given angle.</p>
+        <div class="transform skewy">skewY()</div>
+        <code>.skewy:hover{ transform: skewY(20deg); }</code><br><br>
+
+
+        <p>The skew() method skews an element along the X and Y-axis by the given angles.</p>
+        <div class="transform skew">skew()</div>
+        <code>.skew:hover{ transform: skew(20deg, 10deg); }</code><br><br>
+        
+        <p>
+            <ul>
+                <li>The matrix() method combines all the 2D transform methods into one.</li>
+                <li>The matrix() method take six parameters, containing mathematic functions, which allows you to rotate, scale, move (translate), and skew elements.</li>
+                <li>The parameters are as follow: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())</li>
+            </ul>
+        </p>
+        <div class="transform matrix">matrix()</div><br>
+        <code>.matrix:hover{ transform: matrix(1, -0.3, 0, 1, 0, 0); }</code>
+    </div>
+
+    <h3>2D transformations can change the x- and y-axis of an element. 3D transformations can also change the z-axis of an element.</h3>
+    <div class="card ">
+        <h5 class="card-header">transform-origin</h5>
+        <p>The transform-origin property allows you to change the position of transformed elements.</p>
+        <div class="transform origin">transform-origin</div>
+        <code>{ transform: rotate(45deg); transform-origin: 20% 40%;}</code>
+    </div>
+    <div class="card ">
+        <h5 class="card-header">transform-style</h5>
+        <p>The transform-style property specifies how nested elements are rendered in 3D space.</p>
+        <p>Note: This property must be used together with the transform property.</p>
+        <div class="transform style">transform-style</div>
+        <code>{ transform: rotateX(45deg); transform-style: preserve-3d; }</code>
+    </div>
+   
+    <h3>CSS 3D transforms allow you to move, rotate, scale, and skew elements.</h3>
+    <p>translate3d(x,y,z),translateX(),translateY(),rotate3d(x,y,z,3d),rotateX(),rotateY(),rotateZ(),scale3d(x,y,z),scaleX(),scaleY(),scaleZ(),matrix3d(),perspective(n)</p>
+    <div class="card ">
+        <h5 class="card-header">3D Transition</h5>
+        <p>The rotateX() method rotates an element around its X-axis at a given degree</p>
+        <div style="display: flex;">
+            <div class="transform rotatex">rotateX()</div>&nbsp
+            <div class="transform rotateX">rotateX()</div>
+        </div><code>{ transform: rotateX(150deg); }</code>
+        <br><br>
+
+        <p>The rotateY() method rotates an element around its Y-axis at a given degree.</p>
+        <div style="display: flex;">
+            <div class="transform rotatey">rotateY()</div>&nbsp
+            <div class="transform rotateY">rotateY()</div>
+        </div><code>{ transform: rotateY(150deg); }</code>
+        <br><br>
+        
+
+        <p>The rotateZ() method rotates an element around its Z-axis at a given degree.</p>
+        <div style="display: flex;">
+            <div class="transform rotatez">rotateZ</div>&nbsp&nbsp
+            <div class="transform rotateZ">rotateZ</div>
+        </div><code>{ transform: rotateZ(150deg); }</code>
+        <br><br>
+
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">CSS perspective Property</h5>
+        <p><ul>
+            <li>The perspective property is used to give a 3D-positioned element some perspective.</li>
+            <li>The perspective property defines how far the object is away from the user. So, a lower value will result in a more intensive 3D effect than a higher value.</li>
+            <li>When defining the perspective property for an element, it is the CHILD elements that get the perspective view, NOT the element itself.</li>
+        </ul></p>
+        <div class="sample perspective">
+            <div class="transform style"></div>
+        </div>
+        <code>{ perspective: 100px; }</code>
+        <br><br>
+
+        <div class="sample perspective-none">
+            <div class="transform style"></div>
+        </div>
+        <code>{ perspective: none; }</code>
+    </div>
+    <div class="card ">
+        <h5 class="card-header">CSS perspective-origin Property</h5>
+        <p>
+            <ul>
+                <li>The perspective-origin property defines at from which position the user is looking at the 3D-positioned element.</li>
+                <li>When defining the perspective-origin property for an element, it is the CHILD elements that will get the effect, NOT the element itself.</li>
+                <li>Note: This property must be used in conjunction with the perspective property!</li>
+            </ul>
+        </p>
+        <div class="sample perspective perspective-origin-left">
+            <div class="transform style">perspective-origin: left;</div>
+        </div>
+        <code>{ perspective-origin: left;}</code><br><br>
+
+        <div class="sample perspective perspective-origin-br">
+            <div class="transform style">perspective-origin: bottom right;</div>
+        </div>
+        <code>{ perspective-origin: bottom right;}</code><br><br>
+
+        <div class="sample perspective perspective-origin-per">
+            <div class="transform style">perspective-origin: -90%;</div>
+        </div>
+        <code>{ perspective-origin: -90%;}</code>
+        <br>
+        
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">backface-visibility</h5>
+        <p>
+            <ul>
+                <li>The backface-visibility property defines whether or not the back face of an element should be visible when facing the user.</li>
+                <li>The back face of an element is a mirror image of the front face being displayed.</li>
+                <li>This property is useful when an element is rotated. It lets you choose if the user should see the back face or not.</li>
+            </ul>
+        </p>
+         
+        <div class="transform backface-visibility-hidden">Hidden</div>
+        <code>{ backface-visibility: hidden; }</code><br><br>
+        <div class="transform backface-visibility-visible">Visible</div>
+        
+        <code>{ backface-visibility: visible; }</code>
+    </div>
+
+</div>
+<script>
+    alert("Please use laptop/PC to experience hovering effects")
+</script>

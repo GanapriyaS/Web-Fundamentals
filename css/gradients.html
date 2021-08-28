@@ -1,0 +1,132 @@
+<div >
+    <h3>GRADIENTS</h3>
+    <ol>
+        <li>CSS gradients let you display smooth transitions between two or more specifieu colors.</li>
+        <li>CSS defines two types of gradients
+            <ul>
+                <li>Linear Gradients (goes down/up/left/right/ diagonally)</li>
+                <li>Radial Gradients (defined by their center)</li>
+            </ul>
+        </li>
+    </ol>
+    <h3>CSS Linear Gradients</h3>
+    <ol>
+        <li>To create a linear gradient you must def at least two color stops.</li>
+        <li>Color stops are the colors you want to render smooth transitions among.</li>
+        <li>You can also set a starting point and a direction (or an angle) along with the gradient effect.</li>
+        <li>to top,to right,to left ,default(to bottom),to bottom-right,to-bottom-left, so on</li>
+    </ol>
+    <div class="card " style="background-image: linear-gradient(red, yellow);">
+        <h5 class="card-header default">top to bottom (Default)</h5>
+        <code>{background-image: linear-gradient(red, yellow);}</code>
+    </div>
+    <div class="card " style="background-image: linear-gradient(to right, red , yellow);">
+        <h5 class="card-header custom-color">left to right</h5>
+        <code>{ background-image: linear-gradient(to right, red , yellow); }</code>
+    </div>
+    <div class="card " style="background-image: linear-gradient(to bottom right, red, yellow);">
+        <h5 class="card-header blur">top left to bottom right</h5>
+        <code>{ background-image: linear-gradient(to bottom right, red, yellow); }</code>
+    </div>
+   <br>
+
+   <h3>Using Angles</h3>
+    <ol>
+        <li>If you want more control over the direct of the gradient, you can define an angle, instead of the predefined directions.</li>
+        <li>A value of Odeg is equivalent to "to top".</li>
+        <li>A value of 90deg is equivalent to "to right". A value of 180deg is equivalent to "to bottom".</li>
+    </ol>
+    <div class="card " style="background-image: linear-gradient(0deg,red, yellow);">
+        <h5 class="card-header default">0deg</h5>
+        <code>{background-image: linear-gradient(red, yellow);}</code>
+    </div>
+    <div class="card " style="background-image: linear-gradient(90deg, red , yellow);">
+        <h5 class="card-header custom-color">90deg</h5>
+        <code>{ background-image: linear-gradient(to right, red , yellow); }</code>
+    </div>
+    <div class="card " style="background-image: linear-gradient(180deg, red, yellow);">
+        <h5 class="card-header blur">180deg</h5>
+        <code>{ background-image: linear-gradient(to bottom right, red, yellow); }</code>
+    </div>
+    <div class="card " style="background-image: linear-gradient(-90deg, red, yellow);">
+        <h5 class="card-header blur">-90deg</h5>
+        <code>{ background-image: linear-gradient(to bottom right, red, yellow); }</code>
+    </div>
+    <br>
+
+    <h3>Multiple Color stops</h3>
+    <div class="card " style="background-image: linear-gradient(red, yellow, green);">
+        <h5 class="card-header default">Top to bottom</h5>
+        <code>{background-image: linear-gradient(red, yellow, green);}</code>
+    </div>
+    <div class="card " style="background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);">
+        <h5 class="card-header custom-color">Rainbow background</h5>
+        <code>{ background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); }</code>
+    </div>
+    <br>
+
+    <h3>Using Transparency</h3>
+    <ul>
+        <li>CSS gradients also support transparency which can be used to create fading effect</li>
+        <li>To add transparency, we use the rgba() function to define the color stops.</li>
+        <li>The last parameter in the rgba() function can be a value from 0 to 1, and it defines the transparency of the color: 0 indicates full transparency, 1 indicates full color (no transparency).</li>
+    </ul>
+    <div class="card " style="background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));">
+        <h5 class="card-header default">Transparency</h5>
+        <code>{background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));}</code>
+    </div>
+    <br>
+
+    <h3>Repeating a linear-gradient</h3>
+    <p>The repeating-linear-gradient() function used to repeat linear gradients</p>
+    <div class="card " style="background-image: repeating-linear-gradient(red, yellow 10%, green 20%);">
+        <h5 class="card-header default">A repeating gradient on 0deg axe starting red and finishing green</h5>
+        <code>{background-image: repeating-linear-gradient(red, yellow 10%, green 20%);}</code>
+    </div>
+
+    <div class="card " style="background-image: repeating-linear-gradient(45deg,red,yellow 7%,green 10%);">
+        <h5 class="card-header default">A repeating gradient on 45deg axe starting red and finishing green</h5>
+        <code>background-image: repeating-linear-gradient(45deg,red,yellow 7%,green 10%);</code>
+    </div>
+
+    <div class="card " style="background-image: repeating-linear-gradient(190deg,red,yellow 7%,green 10%);">
+        <h5 class="card-header default">A repeating gradient on 190deg axe starting red and finishing green</h5>
+        <code>background-image: repeating-linear-gradient(190deg,red,yellow 7%,green 10%);</code>
+    </div>
+
+    <div class="card " style="background-image: repeating-linear-gradient(90deg,red,yellow 7%,green 10%);">
+        <h5 class="card-header default">A repeating gradient on 90deg axe starting red and finishing green</h5>
+        <code>background-image: repeating-linear-gradient(90deg,red,yellow 7%,green 10%);</code>
+    </div>
+
+    <br>
+    <h3>CSS Radial Gradients</h3>
+    <ol>
+
+        <li>By default, shape is ellipse, size is farthest-corner, and position is center.</li>
+        <li>A radial gradient is defined by its center.</li>
+        <li>The shape parameter defines the shape. It can take the value circle or ellipse. The default value is ellipse.</li>
+    </ol>
+    <div class="card " style="background-image: radial-gradient(red, yellow, green);">
+        <h5 class="card-header default"> Evenly Spaced Color Stops (this is default)</h5>
+        <code>background-image: radial-gradient(red, yellow, green);</code>
+    </div>
+    <div class="card " style="background-image: radial-gradient(red 5%, yellow 15%, green 60%);">
+        <h5 class="card-header custom-color">Differently Spaced Color Stops</h5>
+        <code>{ background-image: radial-gradient(red 5%, yellow 15%, green 60%); }</code>
+    </div>
+    <div class="card " style="background-image: radial-gradient(circle, red, yellow, green);">
+        <h5 class="card-header blur">Shape is circle</h5>
+        <code>{ background-image: radial-gradient(circle, red, yellow, green); }</code>
+    </div>
+    <div class="card " style="background: radial-gradient(circle,white 40%,rgba(255, 203, 31,0.9) 50%,pink 30%);">
+        <h5 class="card-header blur">Shape is circle with different stop</h5>
+        <code>{ background: radial-gradient(circle,white 40%,rgba(255, 203, 31,0.9) 50%,pink 30%); }</code>
+    </div>
+    <div class="card " style="background-image: repeating-radial-gradient(red, yellow 10%, green 15%);">
+        <h5 class="card-header blur">repeating-radial-gradient() function is used to repeat radial gradients</h5>
+        <code>{ background-image: repeating-radial-gradient(red, yellow 10%, green 15%); }</code>
+    </div>
+    
+
+</div>

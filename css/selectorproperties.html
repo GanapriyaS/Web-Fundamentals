@@ -1,0 +1,220 @@
+<style>
+    h2[class=subtitle]{  color:yellow;  }
+    h2[class~=subtitle1]{  color:greenyellow;  }
+    h2[class$=nd]{ color:gold; }
+    #title{ color:orange }
+    .title{ color:violet }
+    h4:hover{ color:red; }
+    li:first-child{ color:orange;}
+    li:nth-child(2){ color:green; }
+    li:last-child{ color: peru; }
+    li:only-child{ color:pink; }
+    #link:link{ color:lightblue;}
+    #link:visited{ color:darkgrey; }
+    div+p{ color:darkseagreen; }
+    p ~ h5 { color: steelblue; }
+    div>p{ color:coral }
+    div h6{ border:10px solid olive; }
+    p[class^="sta"]{ border:10px solid black;}
+    p[class*="dd"]{ border:10px solid lightblue;}
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    table{
+        width:100%;
+    }
+</style> 
+  
+<div >
+    <h3>Selectors and Properties</h3>
+    <ol>
+        <li>Priority - id > class > tag </li>
+        <li>
+            <pre>
+selector{
+    property:value;
+}
+            </pre>
+         </li>
+        <li>Selectors:
+            <ul>
+                <li>Advanced selectors- +(all) </li>
+                <li>pseudoselectors - hover,last-child,first-child,nth-child ,only-child,visited,link</li>
+                <li>attribute selector [ = ], ^= $= [ |= ] [ ~= ]</li> 
+            </ul>
+        </li>
+    </ol>
+
+    <table>
+        <tr>
+            <th>Selector</th>
+            <th>Example</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>#id</td>
+            <td>#intro</td>
+            <td>Selects all elements with id="intro"</td>
+        </tr>
+        <tr>
+            <td>*<b>(Universal Selector)</b></td>
+            <td>*</td>
+            <td>Selects all elements</td>
+        </tr>
+        <tr>
+            <td>element</td>
+            <td>p</td>
+            <td>Selects all &ltp> elements</td>
+        </tr>
+        <tr>
+            <td>element,element,....<b>Grouping Selector</b></td>
+            <td>div,h1,p</td>
+            <td>Selects all &div>,all &h1>,all &ltp> elements</td>
+        </tr>
+        <tr>
+            <td>.class</td>
+            <td>.intro</td>
+            <td>Selects all elements with class="intro"</td>
+        </tr>
+    </table>
+    <h3>EXAMPLES</h3>
+
+    <div class="card ">
+        <h5 class="card-header ">id</h5>
+        <h2 id="title">h2 with id =>  id = "title" </h2>
+        <code>#title{ color:orange }</code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header ">class</h5>
+        <h2 class="title">h2 with class =>  class = "title" </h2>
+        <code>.title{ color:violet }</code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header default">all h2 with class subtitle</h5>
+        <h2 class="subtitle">h2 with subtitle class</h2>
+        <h2>h2 without subtitle class</h2>
+        <code>h2[class=subtitle]{  color:yellow; }</code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header ">Selects all elements with a class attribute containing the word "subtitle1"</h5>
+        <h2 class="temp subtitle1">h2 with 2 class =>  class = "temp subtitle1" </h2>
+        <h2 class="subtitle1">h2 with 1 class =>  class = "subtitle1" </h2>
+        <code>h2[class~=subtitle1]{  color:greenyellow;  }</code>
+    </div>
+
+    
+
+    <div class="card ">
+        <h5 class="card-header ">Hover will change color when mouse on text</h5>
+        <h4>Hovering header h4</h4>
+        <code>h4:hover{ color:red; }</code>
+    </div>
+    
+    <div class="card ">
+        <h5 class="card-header ">List selectors</h5>
+        <ul>
+            <li>First Child</li>
+            <li>Second Child</li>
+            <li>Last child
+                <ul>
+                    <li>Single child</li>
+                </ul>
+            </li>
+        </ul>
+        <code>
+                li:first-child{ color:orange;}<br>
+                li:nth-child(2){ color:green; }<br>
+                li:last-child{ color:peru; }<br>
+                li:only-child{ color:pink; }
+        </code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header ">Link before lightblue after visted will be darkgrey</h5>
+        <br><a id="link" href="#">Anchor tag with id="link"</a><br><br>
+        <code>#link:link{ color:lightblue;}
+              #link:visited{ color:darkgrey; }
+        </code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header ">Selects the first < p > element that is placed immediately after < div > elements</h5>
+        <div>
+            <p>paragraph inside < div ></p>
+        </div>
+        <p>paragarph next to < /div ></p>
+        <p>paragraph next to < p ></p>
+        <code>div+p{ color:darkseagreen; }
+        </code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header ">Selects every < h5 > element that is preceded by a < p > element</h5>
+        <p>paragraph before h5</p>
+        <h5>h5 tag</h5>
+        <h4>h4 tag</h4>
+        <h5>h5 tag1</h5>
+        <h5>h5 tag2</h5>
+        <code>
+            p ~ h5 { color: steelblue; }
+        </code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">Selects all < p > elements where the parent is a < div > element</h5>
+        <div>
+            <h2>h2 inside div</h2>
+            <p>paragarph inside div</p>
+            <span><p>paragraph inside span inside div ( indirect )</p></span>
+          </div>
+        
+        <code>
+            div>p{ color:coral }
+        </code>
+    </div>
+
+    
+    <div class="card ">
+        <h5 class="card-header"> All h3 descentent div</h5>
+        <div>
+            <h6>Descendent of div</h6>
+            <h6>Descendent of div</h6>
+            <span><h6>Descendent of span inside div</h6></span>
+        </div>
+
+        <code>
+            div h6{ border:10px solid olive; }
+        </code>
+    </div>
+
+
+
+    <div class="card ">
+        <h5 class="card-header">^  starting with that attribute value</h5>
+        <p class="start">Paragarph with class="start"</p>
+        <code>
+            p[class^="sta"]{ border:10px solid black;}
+        </code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">$ for ending with given word</h5>
+        <h2 class="end">h2 with class =>  class = "end" </h2>
+        <h2 class="nd">h2 with class =>  class = "nd" </h2>
+        <code>h2[class$=nd]{ color:gold; }</code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">*  middle/substring with attribute value</h5>
+        <p class="middle">Paragarph with class="middle"</p>
+        <code>
+            p[class*="dd"]{ border:10px solid lightblue;}
+        </code>
+    </div>    
+
+</div>

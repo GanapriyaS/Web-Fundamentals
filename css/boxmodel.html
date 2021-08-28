@@ -1,0 +1,78 @@
+
+<style>
+    .model{
+        width:300px;
+        padding:10px;
+        border:5px solid goldenrod;
+        margin:20px;
+        background-color: moccasin;
+    }
+
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+        padding:10px;
+    }
+
+    table{
+        width: 100%;
+    }
+    
+    </style> 
+  
+<div >
+    <h3>BOX MODEL</h3>
+    <ul>
+        <li>All HTML elements can be considered a boxes.</li>
+        <li>In CSS, the term "box model" is used when talking about design and layout.</li>
+        <li>The CSS box model is essentially a box that wraps around every HTML element.</li>
+        <li>It consists of: margins, borders, padding, and the actual content.</li>
+        <li>border:10px solid black;
+            /* dotted dashed double */
+            /* size style color */</li>
+    </ul>
+    <img src="./img/box.jpeg" width="300" height="300" alt="BOX MODEL">
+    <p><b>Total element width = width + left padding + right padding + left border + right border + left margin + right margin<br>
+        Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin</b>
+    </p>
+    <code>
+        .model{<br>
+            width:300px;<br>
+            padding:10px;<br>
+            border:5px solid goldenrod;<br>
+            margin:20px;<br>
+        }<br>
+    </code><br>
+    <p>300px(width) + 20px(left + right padding) + 10px(left + right border) + 40px(left + right margin) = 370px (Total width)</p>
+   <div class="model">CSS box model is essentially a box that wraps around every HTML element. It consists of borders,padding,margins and actual content.</div>
+    
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>The content of the box, where text and images appear</td>
+            <td><div class="model">Content</div></td>
+        </tr> - 
+        <tr>
+            <td>Padding</td>
+            <td>Clears an area around the content. The padding is transparent.</td>
+            <td><div class="model" style="padding:0;">No padding</div></td>
+        </tr>
+        <tr>
+            <td>Border</td>
+            <td>A border that goes around the padding and content</td>
+            <td><div class="model" style="border:0;">No border</div></td>
+        </tr>
+        <tr>
+            <td>Margin</td>
+            <td>Clears an area outside the border. The margin is transparent</td>
+            <td><div class="model" style="margin:0;">No margin</div></td>
+        </tr>
+    </table>
+    
+</div>

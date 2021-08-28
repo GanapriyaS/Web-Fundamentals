@@ -1,0 +1,165 @@
+body {margin: 0;}
+
+
+.navbar,#navLinks {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 4px solid black;
+}
+.navbar li{
+    float: right; 
+    
+}
+.navbar li a ,#navLinks li a{
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #111;  
+}
+
+.navbar li a:hover, #navLinks li a:hover {
+  background-color: #111;
+color: white;
+}
+#logo{
+        float: left; 
+}
+#bar{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+#navLinks{
+    display: none;
+}
+.sidenav-lg-css,.sidenav-lg-js{
+  display: none;
+}
+.sidenav-lg-html{
+  display:block;
+}
+.sidenav-lg {
+    list-style-type: none;
+    top:50px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 15%;
+    background-color: black;
+    height: 100vh;
+    overflow: auto;
+  }
+  
+.sidenav-lg li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+.sidenav-lg li a:hover{
+    background-color:white;
+    color:black;
+  }
+
+  .sidenav-sm {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow:auto;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav-sm a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color:white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav-sm a:hover {
+    background: white;
+    color: black;
+  }
+  
+  .sidenav-sm .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+
+  .card {
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    padding: 1rem 1rem;
+    margin: 1rem 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width:50%;
+    overflow: auto;
+  }
+
+  .card-header {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  }
+
+  .card-footer {
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+  }
+  #main{
+    margin-left:20%;
+}
+  @media screen and (max-width: 800px) {
+    .navbar li{
+        float: none; 
+        display:none; 
+    }
+    #logo{
+        display: block;
+    }
+    #bar{
+        display: block;
+        float: right;
+    }
+    .sidenav-lg{
+        display: none;
+    }
+   .card{
+       max-width: 100%;
+   }
+   #main{
+    margin-left:0%;
+}
+  }
+
+
+
+
+
+
+

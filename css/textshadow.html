@@ -1,0 +1,50 @@
+<style>
+    .default{ text-shadow: 2px 2px; }
+    
+    .custom-color { text-shadow: 2px 2px red;}
+    
+    .blur { text-shadow: 2px 2px 5px red;} 
+    
+    .text-color {color: white; text-shadow: 2px 2px 4px #000000;}
+    
+    .noxy {text-shadow: 0 0 3px #FF0000; }
+
+    .multi {text-shadow:0 0 3px #FF0000, 0 0 5px #0000FF;}
+    
+    </style> 
+  
+<div >
+    <h3>SHADOW</h3>
+    <ol>
+        <li>Can add shadow to text and to elements The CSS text-shadow property applies shadow to text. </li>
+        <li>In its simplest use, you only specify the horizontal shadow and the vertical shadow</li>
+    </ol>
+    <h3>TEXT SHADOW EXAMPLES</h3>
+    <div class="card ">
+        <h5 class="card-header default">Default</h5>
+        <code>{ text-shadow: 2px 2px; }</code>
+    </div>
+    <div class="card ">
+        <h5 class="card-header custom-color">Custom-color</h5>
+        <code>{ text-shadow: 2px 2px red; }</code>
+    </div>
+    <div class="card ">
+        <h5 class="card-header blur">Blur Added</h5>
+        <code>{ text-shadow: 2px 2px 5px red;}</code>
+    </div>
+    <div class="card ">
+        <h5 class="card-header text-color">White text with Added</h5>
+        <code>{ color: white; text-shadow: 2px 2px 4px #000000;}</code>
+    </div>
+    <div class="card ">
+        <h5 class="card-header noxy">X-0  Y-0 no 3D</h5>
+        <code>{ text-shadow: 0 0 3px #FF0000;}</code>
+    </div><br>
+    <h3>MULTIPLE SHADOW EXAMPLES</h3>
+    <div class="card ">
+        <h5 class="card-header multi">Multiple Shadow</h5>
+        <p>To add more than one shadow to the tex you can add a comma-separated list of shadow</p>
+        <code>{ text-shadow:0 0 3px #FF0000, 0 0 5px #0000FF; }</code>
+    </div>
+
+</div>

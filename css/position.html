@@ -1,0 +1,89 @@
+<style>
+    .position{
+        width:400px;
+        border:3px solid yellow;
+    }
+    
+    </style> 
+  
+<div >
+    <h3>POSITIONING OF ELEMENTS</h3>
+    <p>The position property in CSS tells about the method of positioning for an element or an HTML entity.</p>
+    <p>There are five different types of position property available in CSS:
+        <ul>
+            <li>Static</li>
+            <li>Fixed</li>
+            <li>Relative</li>
+            <li>Absolute</li>
+            <li>Sticky</li>
+        </ul>
+    </p>
+    <p>The positioning of an element can be done using the top, right, bottom and left property.</p>
+    <p>These specify the distance of an HTML element from the edge of the viewport.</p>
+    
+    <div class="card ">
+        <h5 class="card-header">Static</h5>
+        <ul>
+            <li>HTML elements are positioned static by default.</li>
+            <li>Static positioned elements are not affected by the top, bottom, left, and right properties.</li>
+            <li>An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page</li>
+        </ul>
+        
+        <div class="position" style="position: static;"> 
+            { position:static; }
+        </div>       
+        
+    </div>
+    
+    <div class="card ">
+        <h5 class="card-header">Fixed</h5>
+        <ul>
+            <li>Any HTML element with position: fixed property will be positioned relative to the viewport.</li>
+            <li>An element with fixed positioning allows it to remain at the same position even we scroll the page.</li>
+            <li>We can set the position of the element using the top, right, bottom, left.</li>
+        </ul>
+        <div class="position" style="position: fixed; top:80px;"> 
+            { position:fixed; }
+        </div> 
+    </div>
+    
+    <div class="card ">
+        <h5 class="card-header">Relative</h5>
+        <ul>
+            <li>An element with position: relative; is positioned relative to its normal position.</li>
+            <li>Setting the top, right, bottom, and left. properties of a relatively-positioned element will cause it to be adjusted away from its normal position.</li>
+            <li>Other content will not be adjusted to fit into any gap left by the element.</li>
+        </ul>
+        <div class="position" style="position:relative; "> 
+            { position:relative; }
+        </div>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">Sticky</h5>
+        <ul>
+            <li>An element with position: sticky, is positioned based on the user's scroll position.</li>
+            <li>A sticky element toggles between relative and fixed, depending on the scroll position.</li>
+            <li>It is positioned relative until a given offset position is met in the viewport - then it " sticks" in place (like position:fixed).</li>
+            <li>An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed)</li>
+        </ul>
+        <div class="position" style="position:sticky; "> 
+            { position:sticky; }
+        </div>
+    </div>
+    
+    <div class="card ">
+        <h5 class="card-header">Absolute</h5>
+        <ul>
+            <li>An element with position: absolute; is positioned relative to the nearest positioned ancestor.</li>
+            <li>However, if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.</li>
+        </ul>
+        <div class="position" style="position: relative; height:200px; "> 
+            { position:relative; }
+            <div class="position" style="position:absolute; height:70px; width:150px">
+                { position:absolute; }
+            </div>
+        </div> 
+    </div>
+    
+</div>

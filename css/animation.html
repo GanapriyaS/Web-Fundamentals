@@ -1,0 +1,296 @@
+<style>
+    .animate{
+        width: 100px;
+        height: 100px;
+        background: orange;
+    }
+
+    .animate2{
+        width: 100px;
+        height: 100px;
+        background: orange;
+        animation-name: background-change;
+        animation-duration: 4s;
+        animation-delay: 2s;
+    }
+
+    @keyframes translate{
+            10% {background: yellow;  transform: translate(10px,10px);}
+            30% {background: mediumspringgreen;  transform: translate(20px,20px);}
+            50% {background: greenyellow;  transform: translate(40px,40px);}
+            100% {background: rosybrown;  transform: translate(80px,80px);}
+        }
+
+    @keyframes fade-in{
+    from{opacity:0;}
+    to{opacity:1;}
+    }
+
+    .fade-in:hover{
+        animation-name: fade-in;
+        animation-duration: 4s;
+    }
+
+    .translate{
+        animation-name: translate;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+    .animate1{
+        width: 100px;
+        height: 50px;
+        position: relative;
+        background-color:wheat;
+        animation: speed 5s infinite;
+    }
+
+    .linear {animation-timing-function: linear;}
+    .ease {animation-timing-function: ease;}
+    .ease_in {animation-timing-function: ease-in;}
+    .ease_out {animation-timing-function: ease-out;}
+    .ease_in_out {animation-timing-function: ease-in-out;}
+
+    @keyframes speed {
+    from {left: 0px;}
+    to {left: 300px;}
+    }
+
+    .background-change:hover{
+        animation-name: background-change;
+        animation-duration: 4s;
+    }
+
+    @keyframes background-change {
+        from {background: mediumturquoise;}
+        to {background: rgb(245, 12, 160)}
+    }
+
+    .background-position-change:hover{
+        animation-name:background-position-change;
+        animation-duration: 4s;
+    }
+
+    @keyframes background-position-change {
+        0%   {background:mediumturquoise; width:300px;}
+        25%  {background:yellow; height:200px;}
+        50%  {background:midnightblue; width:100px;}
+        75%  {background:green; height:100px;}
+        100% {background:mediumturquoise;width:300px;}
+    }
+
+    .animation_delay:hover{
+        animation-delay: 2s;
+    }
+
+    .animation_iteration_count:hover{
+        animation-iteration-count: 3;
+    }
+
+    .animation_direction_reverse:hover{
+        animation-direction: reverse;
+    }
+
+    .animation_direction_alternate:hover{
+        animation-iteration-count: 2;
+        animation-direction: alternate;
+    }
+
+    .animation_direction_alternate_reverse:hover{
+        animation-iteration-count: 2;
+        animation-direction: alternate-reverse;
+    }
+
+    .animation_fill_mode_forwards{ animation-fill-mode: forwards; }
+    .animation_fill_mode_backwards{ animation-fill-mode: backwards; }
+    .animation_fill_mode_both{ animation-fill-mode: both; }
+
+    .long {
+        animation-name: background-change;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+     }
+
+     .short{
+        animation: background-change 5s linear 2s infinite alternate;
+     }
+  
+</style> 
+  
+<div >
+    <h3>ANIMATIONS</h3>
+    <ol>
+        <li>@keyframes</li>
+        <li>animation-name</li>
+        <li>animation-duration</li>
+        <li>animation-delay</li>
+        <li>animation-iteration-count</li>
+        <li>animation-direction</li>
+        <li>animation-timing-function</li>
+        <li>animation-fill-mode</li>
+        <li>animation</li>
+    </ol>
+    <ul>
+        <li>An animation lets an element gradually change from one style to another.</li>
+        <li>You can change as many CSS properties you want, as many times as you want.</li>
+        <li>To use CSS animation, you must first specify some keyframes for the animation.</li>
+        <li>Keyframes hold what styles the element will have at certain times.</li>
+        <li>The animation-duration property defines how long an animation should take to complete. If the animation-duration property is not specified, no animation will occur, because the default value is 0s (0 seconds). </li>
+
+    </ul>
+    <h3>EXAMPLES</h3>
+    <div class="card ">
+        <h5 class="card-header">@keyframes Rule</h5>
+        <p>When you specify CSS styles inside the @keyframes rule, the animation will gradually change from the current style to the new style at certain times.</p>
+        <p>we have specified when the style will change by using the keywords "from" and "to" (which represents 0% (start) and 100% (complete)).</p>
+        <div class="animate background-change">Background color change</div>
+        <code>.background-change:hover{ animation-name: background-change; animation-duration: 4s; }<br><br>
+        @keyframes background-change {<br>
+            from {background: mediumturquoise;}<br>
+            to {background: rgb(245, 12, 160)}<br>
+        }</code><br><br>
+        <div class="animate background-position-change">Background color and position change</div>
+        <code>.background-position-change:hover{ animation-name: background-change; animation-duration: 4s; }<br><br>
+            @keyframes background-position-change {<br>
+                0%   {background:mediumturquoise; width:300px;}<br>
+                25%  {background:yellow; height:200px;}<br>
+                50%  {background:midnightblue; width:100px;}<br>
+                75%  {background:green; height:100px;}<br>
+                100% {background:mediumturquoise;width:300px;}<br>
+            }</code>
+
+       
+    </div>
+     
+    <div class="card ">
+        <h5 class="card-header">Delay an Animation</h5>
+        <p>The animation-delay property specifies a delay for the start of an animation.</p>
+        <p>Negative values are also allowed. If using negative values, the animation will start as if it had already been playing for N seconds.</p>
+        <div class="animate background-change animation_delay">animation-delay</div>
+        <code>animation-delay: 2s;</code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">animation-iteration-count</h5>
+        <p>The animation-iteration-count property specifies the number of times an animation should run.</p>
+        <p>animation-iteration-count: infinite;  for infinite loops</p>
+        <div class="animate background-position-change animation_iteration_count">animation-iteration-count</div>
+        <code>animation-iteration-count: 3;</code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header"> Animation in Reverse Direction or Alternate Cycles</h5>
+        <p>The animation-direction property specifies whether an animation should be played forwards, backwards or in alternate cycles.</p>
+        <p>The animation-direction property can have the following values:
+            <ul>
+                <li>normal - The animation is played as normal (forwards). This is default</li>
+                <li>reverse - The animation is played in reverse direction (backwards)</li>
+                <li>alternate - The animation is played forwards first, then backwards</li>
+                <li>alternate-reverse - The animation is played backwards first, then forwards</li>
+            </ul>
+        </p> 
+        
+        <div class="animate background-change animation_direction_reverse">reverse</div>
+        <code>{ animation-direction: reverse; }</code><br><br>
+
+        <div class="animate background-change animation_direction_alternate">alternate</div>
+        <code>{ animation-iteration-count: 2; animation-direction: alternate; }</code><br><br>
+
+        <div class="animate background-change animation_direction_alternate_reverse">alternate-reverse</div>
+        <code>{ animation-iteration-count: 2; animation-direction: alternate-reverse; }</code><br><br>
+    </div>
+   
+    <div class="card ">
+        <h5 class="card-header">Speed Curve of the Animation</h5>
+        <p>The animation-timing-function property specifies the speed curve of the animation.</p>
+        <p>The animation-timing-function property can have the following values:
+            <ul>
+                <li>ease - Specifies an animation with a slow start, then fast, then end slowly (this is default)</li>
+                <li>linear - Specifies an animation with the same speed from start to end</li>
+                <li>ease-in - Specifies an animation with a slow start</li>
+                <li>ease-out - Specifies an animation with a slow end</li>
+                <li>ease-in-out - Specifies an animation with a slow start and ends</li>
+                <li>cubic-bezier(n,n,n,n) - Lets you define your own values in a cubic-bezier function</li>
+            </ul>
+        </p> 
+        <div class="animate1 linear">linear</div>
+        <div class="animate1 ease">ease</div>
+        <div class="animate1 ease_in">ease-in</div>
+        <div class="animate1 ease_out">ease-out</div>
+        <div class="animate1 ease_in_out">ease-in-out</div>
+        <code>.linear {animation-timing-function: linear;}<br>
+            .ease {animation-timing-function: ease;}<br>
+            .ease_in {animation-timing-function: ease-in;}<br>
+            .ease_out {animation-timing-function: ease-out;}<br>
+            .ease_in_out {animation-timing-function: ease-in-out;}</code>
+        <br><br>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">Fill-mode For an Animation</h5>
+        <p>CSS animations do not affect an element before the first keyframe is played or after the last keyframe is played. The animation-fill-mode property can override this behavior.</p>
+        <p>The animation-fill-mode property specifies a style for the target element when the animation is not playing (before it starts, after it ends, or both).</p>
+        <p>The animation-fill-mode property can have the following values:
+            <ul>
+                <li>none - Default value. Animation will not apply any styles to the element before or after it is executing</li>
+                <li>forwards - The element will retain the style values that is set by the last keyframe when the animation ends(depends on animation-direction and animation-iteration-count)</li>
+                <li>backwards - The element will get the style values that is set by the first keyframe before the animation starts(depends on animation-direction), and retain this during the animation-delay period</li>
+                <li>both - The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions. Set by the first keyframe before the animation starts, and retain the style values from the last keyframe when the animation ends</li>
+            </ul>
+        </p> 
+        <div class="animate2 animation_fill_mode_forwards">forwards</div>
+        <code>{ animation-fill-mode: forwards; }</code><br><br>
+        <div class="animate2 animation_fill_mode_backwards">backwards</div>
+        <code>{ animation-fill-mode: backwards; }</code><br><br>
+        <div class="animate2 animation_fill_mode_both">both</div>
+        <code>{ animation-fill-mode: both; }</code><br><br>
+    </div>
+       
+
+     <div class="card ">
+        <h5 class="card-header">Short Hand</h5><br>
+        
+        <div class="animate long">Long</div>
+        <code>{<br>
+            animation-name: background-change;<br>
+            animation-duration: 5s;<br>
+            animation-timing-function: linear;<br>
+            animation-delay: 2s;<br>
+            animation-iteration-count: infinite;<br>
+            animation-direction: alternate;<br>
+         }</code><br><br>
+        <div class="animate short">Short</div>
+        <code>{ animation: background-change 5s linear 2s infinite alternate; }</code><br><br>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">Fade-in</h5><br>
+        
+        <div class="animate fade-in">Fade-in</div>
+        <code>@keyframes fade-in{<br>
+            from{opacity:0;}<br>
+            to{opacity:1;}<br>
+         }</code>
+    </div>
+
+    <div class="card ">
+        <h5 class="card-header">Translate-text</h5><br>
+        
+        <p class="translate">Translate text</p>
+        <code>@keyframes translate{<br>
+            10% {background: yellow;  transform: translate(10px,10px);}<br>
+            30% {background: mediumspringgreen;  transform: translate(20px,20px);}<br>
+            50% {background: greenyellow;  transform: translate(40px,40px);}<br>
+            100% {background: rosybrown;  transform: translate(80px,80px);}<br>
+          }<br>
+        </code>
+    </div>
+
+    
+</div>
+<script>
+    alert("Please use laptop/PC to experience hovering effects")
+</script>
