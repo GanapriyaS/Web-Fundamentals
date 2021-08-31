@@ -1,0 +1,559 @@
+<style>
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+        padding:10px;
+    }
+
+    .model{
+        position:relative;
+        width:100px;
+        padding:10px;
+        border:5px solid goldenrod;
+        margin:20px;
+        background-color: moccasin;
+    }
+
+    td:nth-child(3)
+    {
+        text-align: left;
+    }
+
+    table{
+        width: 100%;
+    }
+    
+    .bold{
+    font-weight: bolder;
+    }
+
+    .italic{
+    font-style: italic;
+    }
+
+    #panel,#topdown,#topup,#toptoggle{
+    padding: 5px;
+    text-align: center;
+    background-color: moccasin;
+    border:solid 3px goldenrod;
+    }
+    #panel{
+    display: none;
+    padding: 80px;
+    }
+</style> 
+  
+<div >
+    <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <h2>jQuery Examples</h2>
+    
+    <div class="card " style="max-width:100%;">
+        <h5 class="card-header">Example 1</h5>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            $("#append_text").click(function(){
+                $("#sample1").append("<b>Append</b>");
+            });
+            $("#prepend_text").click(function(){
+                $("#sample1").prepend("<b>Prepend</b>");
+            });
+            $("#append_listitem").click(function(){
+                $("#sample2").append("<li>Append</li>");
+            });
+            $("#prepend_listitem").click(function(){
+                $("#sample2").prepend("<li>Prepend</li>");
+            });
+            $("#insert_before").click(function(){
+                $("#sample3").before("<b>Before</b>");
+            });
+            $("#insert_after").click(function(){
+                $("#sample3").after("<i>After</i>");
+            });
+            $("#remove").click(function(){
+                $("#sample4").remove();
+            });
+            $("#empty").click(function(){
+                $("#sample4").empty();
+            });
+            $("#filter_remove").click(function(){
+                $("p").remove(".sample5,#sample5");
+            });
+            $("#add_class").click(function(){
+                $("#sample6,.sample6").addClass("bold");
+                $("#sample6").addClass("italic")
+                $("#sample7").addClass("bold italic");
+            });
+            $("#remove_class").click(function(){
+                $("#sample6,.sample6").removeClass("bold");
+                $("#sample6").removeClass("italic");
+                $("#sample7").removeClass("bold italic");
+            });
+            $("#toggle_class").click(function(){
+                $("#sample6,.sample6").toggleClass("bold");
+                $("#sample6").toggleClass("italic");
+                $("#sample7").toggleClass("bold italic");
+            });
+        });
+        </script>
+        <br>
+        <table>
+            <tr>
+                <th>Properties</th>
+                <th>Examples</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <td><button id="append_text">Append Text</button>
+                    <button id="prepend_text">prepend Text</button></td>
+                <td><p id="sample1">Sample Paragarph</p></td>
+                <td><code>$("#id").append("html");<br>$("#id").prepend("html");</code></td>
+            </tr>
+            <tr>
+                <td><button id="append_listitem">Append listitem</button>
+                    <button id="prepend_listitem">prepend listitem</button></td>
+                <td><ul id="sample2">
+                    <li>1</li>
+                    <li>2</li>
+                </ul></td>
+                <td><code>$("#id").append("&ltli>html&lt/li>");<br>
+                $("#id").prepend("&ltli>html&lt/li>");</code></td>
+            </tr>
+            <tr>
+                <td><button id="insert_before">Insert before</button>
+                    <button id="insert_after">Insert after</button></td>
+                <td><img id="sample3" src="./img/sample.jpeg"  width="50" height="60"></td>
+                <td><code>$("#id").before("html");<br>
+              $("#id").after("html");</code></td>
+            </tr>
+            <tr>
+                <td><button id="remove">Remove(remove all)</button>
+                    <button id="empty">Empty(remove only content)</button></td>
+                <td><div id="sample4" class="model">Content</div></td>
+                <td><code>$("#id").remove();<br>
+                        $("#id").empty();</code></td>
+            </tr>
+            <tr>
+                <td><p>Among all paragraphs remove only these id paragraphhs</p>
+                    <button id="filter_remove">Filter remove</button></td>
+                <td><p id="sample5">Paragraph with id</p>
+                    <p class="sample5">Paragraph with class</p>
+                    <p>Paragraph with no id and class</p></td>
+                <td><code>$("p").remove(".class,#id");</code></td>
+            </tr>
+            <tr>
+                <td><button id="add_class">Add class</button>
+                    <button id="remove_class">Remove class</button>
+                    <button id="toggle_class">Toggle class</button></td>
+                <td><p id="sample6">Paragraph to be bold and italic - with id</p>
+                    <p class="sample6">Paragraph to be italic - with class</p>
+                <ul id='sample7'>
+                    <li>Bold and</li>
+                    <li>Italic</li>
+                </ul></td>
+                <td><code>$("#id,.class").addClass("classname");<br>
+                    $("#id,.class").removeClass("classname");<br>
+                    $("#id,.class").toggleClass("classname");</code></td>
+            </tr>
+        </table>
+
+</div>
+
+<div class="card " style="max-width:100%;">
+    <h5 class="card-header">Example 2</h5>
+    <script type="text/javascript">
+        $(document).ready(function(){
+  $("#show_text").click(function(){
+    alert($("#sample8").text());
+  });
+  $("#show_html").click(function(){
+    alert($("#sample8").html());
+  });
+  $("#get_value").click(function(){
+    alert($("#sample9").val());
+  });
+  $("#get_attribute").click(function(){
+    alert($("#sample10").attr("href"));
+  });
+  $("#reset_text").click(function(){
+    $("#sample8").text("paragraph changed");
+  });
+  $("#reset_html").click(function(){
+    $("#sample8").html("<b><i>Paragarph changed again</i></b>");
+  });
+  $("#reset_value").click(function(){
+    $("#sample9").val("Input value changed");
+  });
+  $("#reset_attribute").click(function(){
+    $("#sample10").attr("href","www.facebook.com");
+   
+  });
+});
+    </script>
+    <br>
+    <table>
+        <tr>
+            <th>Properties</th>
+            <th>Examples</th>
+            <th>Code</th>
+        </tr>
+        <tr>
+            <td><button id="show_text">Show Text</button>
+                <button id="show_html">Show HTML</button>
+                <button id="get_value">Get Value</button>
+                <button id="get_attribute">Get Attribute</button>
+                <button id="reset_text">Reset Text</button>
+                <button id="reset_html">Reset HTML</button>
+                <button id="reset_value">Reset Value</button>
+                <button id="reset_attribute">Reset Attribute</button>
+                <p>//link display not change but navigate to another link - attribute href change</p></td>
+            <td><p id="sample8">This is a <i>sample</i> line of <b>text</b></p>
+                <input type="text"  id="sample9" value="Sample input"><br><br>
+                <a href="www.google.com" id="sample10">Link with href attribute www.google.com</a></td>
+            <td><code> 
+                <b>SHOW / GET</b><br>
+            alert($("#id").text());<br>
+            alert($("#id").html());<br>
+            alert($("#id").val());<br>
+            alert($("#id").attr("href"));<br><br>
+            <b>RESET</b>
+             $("#id").text("paragraph changed");<br>
+             $("#id").html("&ltb>&lti>Paragarph changed again&lt/i>&lt/b>");<br>
+             $("#id").val("Input value changed");<br>
+             $("#id").attr("href","www.facebook.com");</code></td>
+        </tr>
+        <tr>
+    </table>
+
+</div>
+
+
+<div class="card " style="max-width:100%;">
+    <h5 class="card-header">Example 3</h5>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(function(){
+            $("#accordion_sample").accordion();
+            });
+        });
+    </script>
+    <br>
+    <table>
+        <tr>
+            <th>Examples</th>
+            <th>Code</th>
+        </tr>
+        <tr>
+            <td><div id="accordion_sample">
+                <div>Heading1</div>
+                <div>Content1</div>
+              
+                <div>Heading2</div>
+                <div>Content2</div>
+              
+                <div>Heading3</div>
+                <div>Content3</div>
+              </div></td>
+            <td><code> 
+                $("#id").accordion();</code></td>
+        </tr>
+        <tr>
+    </table>
+</div>
+
+<div class="card " style="max-width:100%;">
+    <h5 class="card-header">Example 4</h5>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#animation").click(function(){
+      $("#sample11").animate({left:'200px'},1000);
+    });
+    $("#animation_toggle").click(function(){
+      $("#sample12").animate({left:'200px',opacity:0.5,height:"toggle"},1000);
+    });
+    $("#animation_resize").click(function(){
+      $("#sample13").animate({left:'200px',opacity:0.5,height:"+=200px",width:"+=200px"},1000);
+    });
+    $("#animation_mul").click(function(){
+      var box=$("#sample14");
+      box.animate({opacity:0.5,height:"500px"},1000);
+      box.animate({opacity:0.9,width:"500px"},1500);
+      box.animate({height:"200px",opacity:0.5},3000);
+      box.animate({opacity:0.9,width:"200px"},4000);
+    });
+    $("#animation_start").click(function(){
+      $("#sample15").animate({left:'200px'},3000);
+    });
+    $("#animation_stop").click(function(){
+      $("#sample15").stop();
+    });
+    $("#callback_function").click(function(){
+      $("#sample16").hide(1000,function(){
+        alert("Square disappear");
+      });
+    });
+    $("#chaining").click(function(){
+      $("#sample17").css("background","red")
+            .slideUp(2000)
+            .slideDown(2000);
+    });
+    $(function(){
+      $("#sample18").draggable();
+    });
+
+    });
+    </script>
+    <br>
+    <table>
+        <tr>
+            <th>Properties</th>
+            <th>Examples</th>
+            <th>Code</th>
+        </tr>
+        <tr>
+            <td><button id="animation">Animation</button>
+                <button id="animation_toggle">Animation toggle</button>
+                <button id="animation_resize">Animation resize </button>
+                <button id="animation_mul">Animation multiply </button></td>
+            <td><div id="sample11" class="model">Animation</div>
+                <div id="sample12" class="model">Animation Toggle</div>
+                <div id="sample13" class="model">Animation Resize</div>
+                <div id="sample14" class="model">Animation Multiply</div></td>
+            <td style="text-align: left;"><code>("#sample11").animate({left:'200px'},1000);<br><br>
+           $("#sample12").animate({left:'200px',opacity:0.5,height:"toggle"},1000);<br><br>
+            $("#sample13").animate({left:'200px',opacity:0.5,height:"+=200px",width:"+=200px"},1000);<br><br>
+            $("#animation_mul").click(function(){<br>
+              var box=$("#sample14");<br>
+              box.animate({opacity:0.5,height:"500px"},1000);<br>
+              box.animate({opacity:0.9,width:"500px"},1500);<br>
+              box.animate({height:"200px",opacity:0.5},3000);<br>
+              box.animate({opacity:0.9,width:"200px"},4000);<br>
+            });</code></td>
+        </tr>
+        <tr>
+            <td><button id="animation_start">Animation start </button>
+                <button id="animation_stop">Animation stop </button>
+                <button id="callback_function">Callback function</button></td>
+            <td><div id="sample15" class="model">Animation start/stop</div>
+                <div id="sample16" class="model">Callback Function</div>
+            <p>//both alert and hide happen simultaneously</p></td>
+            <td><code>$("#sample15").animate({left:'200px'},3000);<br><br>
+          $("#sample16").stop();<br><br>
+          $("#sample16").hide(1000,function(){<br>
+                alert("Square disappear");<br>
+              });</code></td>
+        </tr>
+        <tr>
+            <td><button id="chaining">Chaining</button></td>
+            <td> <div id="sample17" class="model">Chaining</div></td>
+            <td><code>$("#sample17").css("background","red")<br>
+                .slideUp(2000)<br>
+                .slideDown(2000);<br>
+        });</code></td>
+        </tr>
+        <tr>
+            <td>Draggable</td>
+            <td> <div id="sample18" class="model">Draggable</div></td>
+            <td><code> $(function(){<br>
+                $("#sample18").draggable();<br>
+              });</code></td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="card " style="max-width:100%;">
+    <h5 class="card-header">Example 5</h5>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("#topdown").click(function(){
+            $("#panel").slideDown(1000);
+          });
+          $("#topup").click(function(){
+            $("#panel").slideUp(1000);
+          });
+          $("#toptoggle").click(function(){
+            $("#panel").slideToggle(1000);
+          });
+        });
+      </script>
+    <br>
+    <div id="topdown">SlideDown</div>
+    <div id="topup">SlideUp</div>
+    <div id="toptoggle">SlideToggle</div>
+    <div id="panel">
+    This is a content
+    </div>
+    <br>
+    <code>
+    $("#panel").slideDown(1000);<br>
+    $("#panel").slideUp(1000);<br>
+    $("#panel").slideToggle(1000);
+    </code>
+    </div>
+
+
+    <div class="card " style="max-width:100%;">
+        <h5 class="card-header">Example 6</h5>
+        <script type="text/javascript">
+            $(document).ready(function(){
+              $("#fadein").click(function(){
+                $("#sample19").fadeIn();
+                $("#sample20").fadeIn(500);
+                $("#sample21").fadeIn(1000);
+                $("#sample22").fadeIn(1500);
+              });
+              $("#fadeout").click(function(){
+                $("#sample19").fadeOut(1500);
+                $("#sample20").fadeOut(1000);
+                $("#sample21").fadeOut(500);
+                $("#sample22").fadeOut();
+              });
+              $("#fadetoggle").click(function(){
+                $("#sample19").fadeToggle(1500);
+                $("#sample20").fadeToggle(1000);
+                $("#sample21").fadeToggle(500);
+                $("#sample22").fadeToggle();
+              });
+              $("#fadeto").click(function(){
+                $("#sample19").fadeTo(1000,0.20);
+                $("#sample20").fadeTo(1000,0.40);
+                $("#sample21").fadeTo(1000,0.60);
+                $("#sample22").fadeTo(1000,0.80);
+              });
+            });
+          </script>
+          <div style="display: flex;">
+          <div id="sample19" class="model">1</div>
+          <div id="sample20" class="model">2</div>
+          <div id="sample21" class="model">3</div>
+          <div id="sample22" class="model">4</div>
+          </div>
+          
+          <button id="fadeout">FadeOut</button>
+          <button id="fadein">FadeIn</button>
+          <button id="fadetoggle">FadeToggle</button>
+          <button id="fadeto">FadeTo</button>
+          <br><br>
+          <code>
+                $("#id").fadeIn(500);<br>
+                $("#id").fadeOut(500);<br>
+                $("#id").fadeToggle(500);<br>
+                $("#id").fadeTo(1000,0.80);
+          </code>
+    </div>
+
+    <div class="card " style="max-width:100%;">
+        <h5 class="card-header">Example 7</h5>
+        <script type="text/javascript">
+            $(document).ready(function(){
+              $("#toggle").click(function(){
+                $("#sample23").toggle(1000);
+              });
+              $(".hidden").click(function(){
+                $("#sample23").hide(1000);
+                });
+             $(".visible").click(function(){
+                $("#sample23").show(1000);
+                });
+            });
+          </script>
+          <p id="sample23">Hide / Show paragraph</p>
+          <button id="toggle">Toggle hide/show</button>
+          <button class="hidden">Hide</button>
+          <button class="visible">Show</button>
+          <br><br>
+          <code>
+              $("#id").toggle(1000);<br>
+              $("#id").hide(1000);<br>
+              $("#id").show(1000);<br>
+          </code>
+    </div>
+    <div >
+        
+        <div class="card " style="max-width:100%;">
+            <h5 class="card-header">Example 8</h5>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#sample24").dblclick(function(){
+                    $(this).hide();
+                    });
+                });
+                $("#mouse").mouseenter(function(){
+                alert("Paragraph mouseenter");
+                });
+                $("#mouse").mouseleave(function(){
+                alert("Paragraph mouseleave");
+                });
+                $("#mouse").mousedown(function(){
+                alert("Paragraph mousedown");
+                });
+                $("#mouse").mouseup(function(){
+                alert("Paragraph mouseup");
+                });
+                $().ready(function(){
+                    $("#mouse1").on({
+                    mouseleave:function(){
+                        $(this).css("background-color","orange");
+                    },
+                    mouseenter:function(){
+                        $(this).css("background-color","pink");
+                    },
+                    click:function(){
+                        $(this).css("background-color","cyan");
+                    }
+                });
+            });
+            </script>
+            <br>
+            <table>
+                <tr>
+                    <th>Properties</th>
+                    <th>Examples</th>
+                    <th>Code</th>
+                </tr>
+                <tr>
+                    <td>Double click</td>
+                    <td><p id="sample1">Double click to hide</p></td>
+                    <td><code> $("#id").dblclick(function(){<br>
+                        $(this).hide();<br>
+                        });</code></td>
+                </tr>
+                <tr>
+                    <td>Mouse Functions</td>
+                    <td><p id="mouse">Mouse Functions - Here</p></td>
+                    <td><code>
+                        $("#mouse").mouseenter(function(){<br>
+                        alert("Paragraph mouseenter");<br>
+                        });<br><br>
+                        $("#mouse").mouseleave(function(){<br>
+                        alert("Paragraph mouseleave");<br>
+                        });<br><br>
+                        $("#mouse").mousedown(function(){<br>
+                        alert("Paragraph mousedown");<br>
+                        });<br><br>
+                        $("#mouse").mouseup(function(){<br>
+                        alert("Paragraph mouseup");<br>
+                        });</code></td>
+                </tr>
+                <tr>
+                    <td>Mouse Functions</td>
+                    <td><p id="mouse1">Mouse Functions with CSS - Here</p></td>
+                    <td><code>
+                        $$().ready(function(){<br>
+                            $("#mouse1").on({<br>
+                            mouseleave:function(){<br>
+                                $(this).css("background-color","orange");<br>
+                            },<br>
+                            mouseenter:function(){<br>
+                                $(this).css("background-color","pink");<br>
+                            },<br>
+                            click:function(){<br>
+                                $(this).css("background-color","cyan");<br>
+                            }
+                        });</code></td>
+                </tr>
+            </table>
+    
+    </div>
+</div>

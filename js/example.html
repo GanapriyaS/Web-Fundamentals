@@ -1,0 +1,443 @@
+
+<style>
+    table,td,th{
+        border:1px solid goldenrod;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-collapse: collapse;
+        text-align: center;
+        padding:10px;
+        background-color: whitesmoke
+    }
+
+    .model{
+        position:relative;
+        width:100px;
+        padding:10px;
+        border:5px solid goldenrod;
+        margin:20px;
+        background-color: moccasin;
+    }
+
+    td:nth-child(3)
+    {
+        text-align: left;
+    }
+
+    table{
+        width: 100%;
+    }
+    
+    .bold{
+    font-weight: bolder;
+    }
+
+    .italic{
+    font-style: italic;
+    }
+
+    #panel,#topdown,#topup,#toptoggle{
+    padding: 5px;
+    text-align: center;
+    background-color: moccasin;
+    border:solid 3px goldenrod;
+    }
+    #panel{
+    display: none;
+    padding: 80px;
+    }
+</style> 
+  
+<div >
+    <h2>JavaScript Examples</h2>
+    
+    <div style="overflow:auto;">
+        <script type="text/javascript">
+            function changeText(change_text){
+                change_text.innerHTML="Changed text";
+            }
+            var bgcolor=new Array('lightgreen','lightblue' ,'lightred','wheat','gold','thistle','silver','sandybrown')
+            document.body.style.background=bgcolor[Math.floor(Math.random()*bgcolor.length)]
+            function time1(){
+                document.getElementById('date1').innerHTML = Date();
+            }
+            function time2(){
+                document.getElementById('date2').innerHTML = Date();
+            }
+            function years(form){
+                form.result.value=form.age.value * 5;
+            }
+            function string(form){
+            var s="ABC";
+            var result=["correct","wrong"];
+            var j=0;
+            if(form.result1.value ==s.substring(j,j+1))
+            {
+                window.alert(result[0]);
+            }
+            else{
+                window.alert(result[1]);
+            }
+        }
+    
+        
+        var person ={firstname:"John",age:50,eye:'blue green'};
+        document.getElementById("name").innerHTML=person.firstname;
+        document.getElementById("strlen").innerHTML=person.eye.length;
+        document.getElementById("value").innerHTML=person.firstname + "<br>"+" of age "+person.age+ " 'has' a "+person.eye+ " color.";
+        document.getElementById("rand").innerHTML=Math.random();
+        document.getElementById("max").innerHTML=Math.max(3,9,0,-6,9,8);
+        document.getElementById("min").innerHTML=Math.min(3,9,0,-6,9,8);
+        document.getElementById("round").innerHTML=Math.round(15.5);
+        document.getElementById("floor").innerHTML=Math.floor(15.6);
+        document.getElementById("ceil").innerHTML=Math.ceil(15.1);
+
+
+       
+        </script>
+        <table>
+            <tr>
+                <th>Properties</th>
+                <th>Examples</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <td>Change Text</td>
+                <td><h4 onclick="changeText(this)">Click here to change text</h4></td>
+                <td><code>function changeText(change_text){<br>
+                    change_text.innerHTML="Changed text";<br>
+                }</code></td>
+            </tr>
+            <tr>
+                <td>Write method</td>
+                <td>25</td>
+                <td><code>document.write(5*5);</code></td>
+            </tr>
+            <tr>
+                <td>Background Color Change</td>
+                <td>Refresh to see effect</td>
+                <td><code>
+                    var bgcolor=new Array('lightgreen','lightblue' ,'lightred','wheat','gold','thistle','silver','sandybrown')<br>
+                    document.body.style.background=bgcolor[Math.floor(Math.random()*bgcolor.length)]<br>
+                  </code></td>
+            </tr>
+            <tr>
+                <td>Time Change</td>
+                <td><button  onclick="time1()">Click to see date</button>
+                    <p id="date1">TIME</p>
+                    <button  onmouseover="time2()">MouseOver to see date</button>
+                    <p id="date2">TIME</p></td>
+                <td><code>document.getElementById('id').innerHTML = Date();</code></td>
+            </tr>
+            <tr>
+                <td>Calculate</td>
+                <td><form method="post">
+                    <table>
+                      <tr>
+                        <td>Enter your age:</td>
+                        <td><input type="number" name="age" size=15></td>
+                      </tr>
+                      <tr>
+                        <td><input type="button" value="calculate" onclick="years(this.form)"></td>
+                      </tr>
+                      <tr>
+                        <td>Your age multiply by 5:</td>
+                        <td><input type="number" name="result" size=15></td>
+                      </tr>
+                    </table>
+                  </form></td>
+                <td><code>form.result.value=form.age.value * 5;</code></td>
+            </tr>
+            <tr>
+                <td>String Methods</td>
+                <td>
+                    <form method="POST">
+                    <input type="text" name="result1" id="character" size=15 placeholder="Enter Character">
+                    <input type="button" value="Click here" onclick="string(this.form)">
+                    </form>
+                </td>
+                <td><code>var s="ABC";<br>
+                    var result=["correct","wrong"];<br>
+                    var j=0;<br>
+                    if(form.result1.value ==s.substring(j,j+1))<br>
+                    {<br>
+                        window.alert(result[0]);<br>
+                    }<br>
+                    else{<br>
+                        window.alert(result[1]);<br>
+                    }</code></td>
+            </tr>
+            <tr>
+                <td>JS Objects</td>
+                <td>
+                    <p>Name : <span id="name"></span></p>
+                    <p>Strlen : <span id="strlen"></span></p>
+                    <p>Content : <span id="value"></span></p>
+                </td>
+                <td><code>var person ={firstname:"John",age:50,eye:'blue green'};<br>
+                    document.getElementById("objects").innerHTML=person.eye;<br>
+                    document.getElementById("strlen").innerHTML=person.eye.length;<br>
+                    document.getElementById("object").innerHTML=person.firstname + "<br>"+" of age "+person.age+ " 'has' a "+person.eye+ " color.";<br></code></td>
+            </tr>
+            <tr>
+                
+                <td>Math</td>
+                <td style="text-align: left;">
+                    <p>Random : </p><span id="rand"></span>
+                <p>Max : <span id="max"></span></p>
+                <p>Min : <span id="min"></span></p>
+                <p>Round : <span id="round"></span></p>
+                <p>Floor : <span id="floor"></span></p>
+                <p>Ceil : <span id="ceil"></span></p>
+                </td>
+                <td><code>  document.getElementById("rand").innerHTML=Math.random();<br>
+                    document.getElementById("max").innerHTML=Math.max(3,9,0,-6,9,8);<br>
+                    document.getElementById("min").innerHTML=Math.min(3,9,0,-6,9,8);<br>
+                    document.getElementById("round").innerHTML=Math.round(15.5);<br>
+                    document.getElementById("floor").innerHTML=Math.floor(15.6);<br>
+                    document.getElementById("ceil").innerHTML=Math.ceil(15.1);<br>
+                </code>
+           </td>
+            </tr>
+                <tr>
+                <td>Array</td>
+                <td style="text-align: left;">
+                    <p>Array index : <span id="Array"></span></p>
+                    <p>Array Length : <span id="length"></span></p>
+                    <p>Array to String : <span id="str"></span></p>
+                    <p>Array join : <span id="join"></span></p>
+                    <p>Pop : <span id="pop"></span></p>
+                    <p>Array shift :<span id="shift"></span></p>
+                    <p>Push : <span id="push"></span></p>
+                    <p>Unshift : <span id="unshift"></span></p>
+                    <p>Change value : <span id="change"></span></p>
+                    <p>Delete element : <span id="delete"></span></p>
+                    <p>Splice : <span id="splice"></span></p>
+                    <p>splice add items 2 include starting and 0 intdicate no things should be deleted
+                    <p>Sort : <span id="sort"></span></p>
+                    <p>Reverse : <span id="reverse"></span></p>
+                    <p>Concatenation : <span id="concat"></span></p>
+                </td>
+                <td><code>  var array=["one","two","three"];<br>
+                    document.getElementById("Array").innerHTML=array[1];<br>
+                    document.getElementById("length").innerHTML=array.length;<br>
+                    document.getElementById("str").innerHTML=array.toString();<br>
+                    document.getElementById("join").innerHTML=array.join(" , ");<br>
+                    array.pop();<br>
+                    array.shift();<br>
+                    array.push("push");<br>
+                    array.unshift("unshift");<br>
+                    array[0]="changed";<br>
+                    delete array[0];<br>
+                    array.splice(2,0,"lemon");<br>
+                    array.sort();<br>
+                    document.getElementById("sort").innerHTML=array;<br>
+                    array.reverse();<br>
+                    var array2=['new1','new2'];<br>
+                    var combined=array.concat(aray2);<br>
+                </code>
+           </td>
+            </tr>
+           <tr>
+            <td>If - else</td>
+            <td>
+                <p>Grade : <span id="grade"></span></p>
+                <p>(x==8): <span id="if1"></span></p>
+            </td>
+            <td><code>var score=50;<br>
+                if(score < 50){ document.getElementById("grade").innerHTML=("F") }<br>
+                else if(score < 70){ document.getElementById("grade").innerHTML=("D") }<br>
+                else if(score < 80){ document.getElementById("grade").innerHTML=("C") }<br>
+                else if(score < 90){ document.getElementById("grade").innerHTML=("B") }<br>
+                else if(score <= 100){ document.getElementById("grade").innerHTML=("A") }<br>
+                else { document.getElementById("grade").innerHTML=("Wrong") }<br><br>
+                var x=0;<br>
+                document.getElementById("if").innerHTML=(x==8);
+            </code></td>
+        </tr>
+        <tr>
+            <td>For in loop</td>
+            <td>
+                <p>For in Loop : <span id="forin"></span></p>
+            <script>
+                var txt="";
+                var person={fname:"John",lname:"smith",age:30};
+                var x;
+                for(x in person){
+                  txt += person[x] + " ";
+                }
+                document.getElementById("forin").innerHTML=txt;
+            </script>
+            </td>
+            <td><code>var txt="";<br>
+                var person={fname:"John",lname:"smith",age:30};<br>
+                var x;<br>
+                for(x in person){ txt += person[x] + " "; }<br>
+                document.getElementById("forin").innerHTML=txt;</code></td>
+        </tr>
+        <tr>
+            <td>Boolean</td>
+            <td>
+                <p>Boolean : <span id="boolean"></span></p>
+                <script>
+                    var b1=Boolean(80);
+                    var b2=Boolean(2.86);
+                    var b3=Boolean(-10);
+                    var b4=Boolean("Hi");
+                    var b5=Boolean('false');
+                    var b6=Boolean(1+8+10.14);
+                    var b7=Boolean(0);
+                    document.getElementById("boolean").innerHTML=b1 +' '+ b2+" "+b3 +' '+ b4+" "+b5 +' '+ b6+" "+b7;
+                </script>
+            </td>
+            <td><code>var b1=Boolean(80);<br>
+                var b2=Boolean(2.86);<br>
+                var b3=Boolean(-10);<br>
+                var b4=Boolean("Hi");<br>
+                var b5=Boolean('false');<br>
+                var b6=Boolean(1+8+10.14);<br>
+                var b7=Boolean(0);<br>
+                document.getElementById("boolean").innerHTML=b1 +' '+ b2+" "+b3 +' '+ b4+" "+b5 +' '+ b6+" "+b7;
+            </code></td>
+        </tr>
+        <tr>
+            <td>For loop</td>
+            <td>
+                <p>For Loop : <span id="for"></span></p>
+                <script>
+                var count;
+                var for_result="";
+                for(count=0;count<=5;count++){
+                  for_result+=" "+count;
+                }           
+                document.getElementById("for").innerHTML=for_result;    
+                </script>
+                
+            </td>
+            <td><code>var count;<br>
+                var for_result=0;<br>
+                for(count=0;count<=10;count++){ for_result+=for_result+count; }<br>      
+                document.getElementById("for").innerHTML=for_result; </code></td><br>
+        </tr>
+        <tr>
+            <td>Do While loop</td>
+            <td>
+                <p>Do while loop : <span id="dowhile"></span></p>
+                <script>
+                    var j=0;
+                    var dowhile='';
+                    do{
+                    if(j==5)break;
+                    dowhile+=" "+j;
+                    j++;
+                  }while(j<20)
+                  document.getElementById("dowhile").innerHTML=dowhile;
+                </script>
+            </td>
+            <td><code>var j=0;<br>
+                var dowhile='';<br>
+                do{<br>
+                if(j==5)break;<br>
+                dowhile+=" "+j;<br>
+                j++;<br>
+              }while(j < 20)<br>
+              document.getElementById("dowhile").innerHTML=dowhile; </code></td>
+        </tr>
+        <tr>
+            <td>While loop</td>
+            <td>
+                <p>While loop : <span id="while"></span></p>
+                <script>
+                    var j=0;
+                    var while_result='';
+                    while(j<20){
+                    if(j==5)break;
+                    while_result+=" "+j;
+                    j++;
+                  }
+                  document.getElementById("while").innerHTML=while_result;
+                </script>
+            </td>
+            <td><code>var j=0;<br>
+                var while_result='';<br>
+                while(j<20){<br>
+                if(j==5)break;<br>
+                while_result+=" "+j;<br>
+                j++;<br>
+              }<br>
+              document.getElementById("while").innerHTML=while_result;</code></td>
+        </tr>
+        <tr>
+            <td>Functions</td>
+            <td>
+                <script>
+                    function fun(a,b){
+                    return a * b;
+                }
+                document.getElementById("fun").innerHTML=fun(5,3);
+                </script>
+                <p>Function : <span id="fun"></span></p>
+                
+            </td>
+            <td><code>function fun(a,b){<br>
+                return a * b; }<br>
+                document.getElementById("fun").innerHTML=fun(5,3);</code></td>
+        </tr>
+        </table>
+</div>
+
+
+<script>
+        var arr=["one","two","three"];
+        document.getElementById("Array").innerHTML=arr[1];
+        document.getElementById("length").innerHTML=arr.length;
+        document.getElementById("str").innerHTML=arr.toString();
+        document.getElementById("join").innerHTML=arr.join(" , ");
+        arr.pop();
+        document.getElementById("pop").innerHTML=arr.join(" , ");
+        arr.shift();
+        document.getElementById("shift").innerHTML=arr.join(" , ");
+        arr.push("push");
+        document.getElementById("push").innerHTML=arr.join(" , ");
+        arr.unshift("unshift");
+        document.getElementById("unshift").innerHTML=arr.join(" , ");
+        arr[0]="changed";
+        document.getElementById("change").innerHTML=arr.join(" , ");
+        delete arr[0];
+        document.getElementById("delete").innerHTML=arr.join(" , ");
+        arr.splice(2,0,"lemon");
+        document.getElementById("splice").innerHTML=arr.join(" , ");
+        arr.sort();
+        document.getElementById("sort").innerHTML=arr;
+        arr.reverse();
+        document.getElementById("reverse").innerHTML=arr;
+        var arr2=['new1','new2'];
+        var combined=arr.concat(arr2);
+        document.getElementById("concat").innerHTML=combined;
+</script>
+
+<script>
+    var x=0;
+    document.getElementById("if1").innerHTML=(x==8);
+</script>
+
+<script>
+    var score=50;
+        if(score <50)
+            document.getElementById("grade").innerHTML=("F")
+        else if(score<70){
+            document.getElementById("grade").innerHTML=("D")
+        }
+        else if(score<80){
+            document.getElementById("grade").innerHTML=("C")
+        }
+        else if(score<90){
+            document.getElementById("grade").innerHTML=("B")
+        }
+        else if(score<=100){
+            document.getElementById("grade").innerHTML=("A")
+        }
+        else {
+            document.getElementById("grade").innerHTML=("Wrong")
+        }
+</script>
+</div>

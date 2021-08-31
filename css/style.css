@@ -37,7 +37,7 @@ color: white;
 #navLinks{
     display: none;
 }
-.sidenav-lg-css,.sidenav-lg-js{
+.sidenav-lg-css,.sidenav-lg-js,.sidenav-lg-jQuery{
   display: none;
 }
 .sidenav-lg-html{
@@ -113,7 +113,7 @@ color: white;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
     padding: 1rem 1rem;
-    margin: 1rem 1rem;
+    margin: 1rem 0rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width:50%;
     overflow: auto;
@@ -132,7 +132,7 @@ color: white;
     border-top: 1px solid rgba(0, 0, 0, 0.125);
   }
   #main{
-    margin-left:20%;
+    margin-left:18%;
 }
   @media screen and (max-width: 800px) {
     .navbar li{

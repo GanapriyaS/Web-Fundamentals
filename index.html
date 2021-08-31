@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <title>Home</title>
 </head>
@@ -32,9 +33,10 @@
         <nav>
         <ul class="navbar">
             <li id="logo"><a  href="#home">LOGO</a></li>
-            <li ><a  href="javascript:void(0);" onclick="showNavBarlg('html','css','js')">HTML</a></li>
-            <li><a  href="javascript:void(0);" onclick="showNavBarlg('css','html','js')">CSS</a></li>
-            <li><a  href="javascript:void(0);" onclick="showNavBarlg('js','html','css')">JS</a></li>
+            <li ><a  href="javascript:void(0);" onclick="showNavBarlg('html','css','js','jQuery')">HTML</a></li>
+            <li><a  href="javascript:void(0);" onclick="showNavBarlg('css','html','js','jQuery')">CSS</a></li>
+            <li><a  href="javascript:void(0);" onclick="showNavBarlg('js','html','css','jQuery')">JS</a></li>
+            <li><a  href="javascript:void(0);" onclick="showNavBarlg('jQuery','html','css','js')">jQuery</a></li>
             <li><a  href="https://github.com/GanapriyaS/Web_Fundamentals" ><i class="fab fa-github-alt"> CODE</i></a></li>
             <li id="bar"><a href="javascript:void(0);" onclick="showNavBar()">&#9776;</a></li>
           </ul>
@@ -42,6 +44,7 @@
             <li> <a  href="javascript:void(0);" class="openbtn" onclick="openSideNav('sidebar-html')">HTML</a></li>
             <li><a  href="javascript:void(0);" onclick="openSideNav('sidebar-css')">CSS</a></li>
             <li><a  href="javascript:void(0);" onclick="openSideNav('sidebar-js')">JS</a></li>
+            <li><a  href="javascript:void(0);" onclick="openSideNav('sidebar-jQuery')">jQuery</a></li>
             <li><a  href="https://github.com/GanapriyaS/Web_Fundamentals"><i class="fab fa-github-alt"> CODE</i></a></li>
             
           </ul>
@@ -84,6 +87,11 @@
           </ul>
           <ul class="sidenav-lg-js sidenav-lg" id="js">
             <li><a href="javascript:void(0);" onclick="content('./js/home.html')">Home</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./js/example.html')">Examples</a></li>
+          </ul>  
+          <ul class="sidenav-lg-jQuery sidenav-lg" id="jQuery">
+            <li><a href="javascript:void(0);" onclick="content('./jQuery/home.html')">Home</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./jQuery/examples.html')">Examples</a></li>
           </ul>
           <div id="sidebar-html" class="sidenav-sm">
             <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav('sidebar-html')">×</a>
@@ -125,6 +133,12 @@
           <div id="sidebar-js" class="sidenav-sm">
             <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav('sidebar-js')">×</a>
             <a href="javascript:void(0);" onclick="content('./js/home.html')">Home</a>
+            <a href="javascript:void(0);" onclick="content('./js/example.html')">Examples</a>
+          </div>
+          <div id="sidebar-jQuery" class="sidenav-sm">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav('sidebar-jQuery')">×</a>
+            <a href="javascript:void(0);" onclick="content('./jQuery/home.html')">Home</a>
+            <a href="javascript:void(0);" onclick="content('./jQuery/examples.html')">Examples</a>
           </div>
     </section>
     <section id="main" style="padding-top: 50px;">
@@ -136,15 +150,20 @@
     
 </body>
 <script src="./js/script.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 <script>
-  function showNavBarlg(x,y,z) {
+  function showNavBarlg(x,y,z,a) {
     var u=document.getElementById(x);
     var v=document.getElementById(y);
     var w=document.getElementById(z);
+    var b=document.getElementById(a);
     u.style.display="block";
     v.style.display="none";
     w.style.display="none";
+    b.style.display="none";
   }
 
     function content(x){
