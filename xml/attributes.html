@@ -1,0 +1,63 @@
+<h3>XML Attributes</h3>
+<ul>
+    <li>XML elements can have attributes, just like HTML.</li>
+    <li>Attributes are designed to contain data related to a specific element.</li>
+    <li>Attribute values must always be quoted. Either single or double quotes can be used.<br>
+        e.g) For a person's gender, &ltperson gender="female"> (or) &ltperson gender='female'></li>
+    <li>If the attribute value itself contains double quotes you can use single quotes<br>
+        e.g) &ltgangster name='George "Shotgun" Ziegler'>&lt/gangster> (or) &ltgangster name="George & quot;Shotgun& quot; Ziegler">&ltds/gangster> (character entities)
+    </li>
+</ul>
+
+<p>Cons</p>
+<ul>
+    <li>attributes cannot contain multiple values (elements can)</li>
+    <li>attributes cannot contain tree structures (elements can)</li>
+    <li>attributes are not easily expandable (for future changes)</li>
+</ul>
+
+<p>There are no rules about when to use attributes or when to use elements in XML.</p>
+<div class="card">
+    <h5 class="card-header">3 Ways</h5>
+    <code>
+        <pre>
+&ltnote date="2008-01-10">
+    &ltto>Tove&lt/to>
+    &ltfrom>Jani&lt/from>
+&lt/note>
+<hr>
+&ltnote >
+    &ltdate>2008-01-10&lt/date>
+    &ltto>Tove&lt/to>
+    &ltfrom>Jani&lt/from>
+&lt/note>
+<hr>
+&ltnote >
+    &ltdate>
+        &ltyear>2008&lt/year>
+        &ltmonth>01&lt/month>
+        &ltday>10&lt/day>
+    &lt/date>
+    &ltto>Tove&lt/to>
+    &ltfrom>Jani&lt/from>
+&lt/note>
+        </pre>
+    </code>
+<h5 class="card-footer">metadata (data about data) should be stored as attributes, and the data itself should be stored as elements.</h5>
+<code>
+    <pre>
+&ltmessage>
+    &ltnote id="1">
+        &ltdate>2008-01-10&lt/date>
+        &ltto>Tove&lt/to>
+        &ltfrom>Jani&lt/from>
+    &lt/note>
+    &ltnote id="2">
+        &ltdate>2008-01-12&lt/date>
+        &ltto>Tove&lt/to>
+        &ltfrom>Jani&lt/from>
+    &lt/note>
+&ltmessages>
+    </pre>
+</code>
+</div>

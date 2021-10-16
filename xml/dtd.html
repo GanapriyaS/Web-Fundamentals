@@ -1,0 +1,65 @@
+<h3>XML DTD</h3>
+<ul>
+    <li>The XML Document Type Declaration, known as DTD, is a way to describe XML language precisely.</li>
+    <li>DTDs check vocabulary and validity of the structure of XML documents against grammatical rules of appropriate XML language.</li>
+    <li>An XML DTD can be either specified inside the document, or it can be kept in a separate document and then liked separately.</li>
+    <li>The DTD starts with &lt;!DOCTYPE delimiter.<li>
+    <li>An element tells the parser to parse the document from the specified root element.</li>
+    <li>DTD identifier is an identifier for the document type definition, which may be the path to a file on the system or URL to a file on the internet. If the DTD is pointing to external path, it is called External Subset.</li>
+    <li>The square brackets [] enclose an optional list of entity declarations called Internal Subset.</li>
+</ul>
+<div class="card">
+    <h5 class="card-header">SYNTAX</h5>
+    <code>
+        &lt!DOCTYPE element DTD identifier<br>
+        [<br>
+        declaration1<br>
+        declaration2<br>
+        ............<br>
+        ]<br>
+    </code>
+</div>
+<code>
+    &lt?xml version "1.0" encoding= "UTF-8" standalone="yes" ?><br>
+    &lt!DOCTYPE address [<br>
+    &lt!ELEMENT address (name, company, phone) ><br>
+    &lt!ELEMENT name (#PCDATA)><br>
+    &lt!ELEMENT company (#PCDATA)> <br>
+    &ltIELEMENT phone (#PCDATA)><br>
+]><br>
+&ltaddress><br>
+&ltname>Tanmay Patil&lt/name><br>
+&ltcompany>Tutorials Point&lt/company> <br>
+&ltphone>(011) 123-4567&lt/phone><br>
+&lt/address><br>
+</code>
+<div class="card">
+<h5 class="card-header">Start Declaration - Begin the XML declaration </h5>
+<code>&ltxml version="1.8" encoding="UTF-8" standalone="yes" ?></code>
+<hr>
+<h5 class="card-header">DTD-Immediately after the XML header, the document type declaration follows commonly referred to as the DOCTYPE</h5>
+<code>&lt!DOCTYPE address [</code>
+<p>The DOCTYPE declaration has an exclamation mark (!) at the start of the element name.The DOCTYPE informs the parser that a DTD is associated with this XML document.</p>
+<hr>
+<h5>DTD Body - The DOCTYPE declaration is followed by body of the DTD, where you declare elements attributes entities, and notations</h5>
+<code>
+    &lt!ELEMENT address (name, company, phone) ><br>
+    &lt!ELEMENT name (#PCDATA)><br>
+    &lt!ELEMENT company (#PCDATA)> <br>
+    &ltIELEMENT phone (#PCDATA)><br>
+</code>
+<p>Several elements are declared here that make up the vocabulary of the &ltname> document &lt!ELEMENT name (#PCDATA)> defines the element name to be of type "#PCDATA" Here #PCDATA means parse-able textdata</p>
+<hr>
+<h5>End Declaration</h5>
+<p>Finally, the declaration section of the DTD is closed using a closing bracket and a closing angle bracket (]>). This effectively ends the definition, and thereafter, the XML document follows immediately</p>
+</div>
+
+<h3>RULES</h3>
+<ul>
+    <li>The document type declaration must appear at the start of the document (preceded only by the XML header)-it is not permitted anywhere else within the document</li>
+    <li>Similar to the DOCTYPE declaration, the element declarations must start with an exclamation mark</li>
+    <li>The Name in the document type declaration must match the element type of the root element</li>
+</ul>
+
+<p>External dtd can be used by standalone as no.</p>
+

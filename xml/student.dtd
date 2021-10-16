@@ -1,0 +1,10 @@
+<!ELEMENT college (student+)>
+<!ATTLIST college
+  code CDATA #REQUIRED
+  name CDATA #REQUIRED>
+<!ELEMENT student (rollno,name,branch,year,email)>
+<!ELEMENT rollno (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT branch (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT email (#PCDATA)>

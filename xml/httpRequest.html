@@ -1,0 +1,87 @@
+<h3>XMLHttpRequest</h3>
+<h4>XMLHttpRequest Object</h4>
+<p>The XMLHttpRequest object can be used to request data from a web server. The XMLHttpRequest object is a developers dream, because you can:</p>
+<ul>
+    <li>Update a web page without reloading the page</li>
+    <li>Request data from a server - after the page has loaded</li>
+    <li>Receive data from a server  - after the page has loaded</li>
+    <li>Send data to a server - in the background</li>
+</ul>
+
+<p><button onclick="loadXMLDoc()">getElementsByTagName()</button></p> 
+<p id="demo2">xhttp.responseXML</p>
+<table id="demo" border="1">
+<tr>
+    <th>Rollno</th>
+    <th>Name</th>
+    <th>Branch</th>
+    <th>Year</th>
+    <th>Email</th>
+</tr>
+</table>
+<p><button onclick="loadXMLDoc1()">XPath</button></p> 
+<p id="demo1"></p>
+<div class="card">
+    <p class="card-header">Creates an XMLHttpRequest object</p>
+    <code>var xhttp = new XMLHttpRequest();</code><br>
+    <hr>
+    <p class="card-header">The onreadystatechange property specifies a function to be executed every time the status of the XMLHttpRequest object changes</p>
+    <code>xhttp.onreadystatechange= function()</code><br>
+    <hr>
+    <p class="card-header">When readyState property is 4 and the status property is 200, the response is ready</p>
+    <code>if (this.readyState == 4 && this.status ==200) </code><br>
+    <hr>
+    <p class="card-header">The responseText property returns the server response as a text string. The text string can be used to update a web page</p>
+    <code>i if (this.readyState == 4 && this.status ==200) {<br>
+        document.getElementById("demo").innerHTML = xhttp.responseText;<br>
+    }</code><br>
+    <hr>
+
+</div>
+<script>    
+
+function loadXMLDoc1(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange= function() {
+        if (this.readyState == 4 && this.status ==200) {
+            showResult (xhttp.responseXML);
+        }
+    };
+    xhttp.open("GET", "./xml/student.xml", true);
+    xhttp.send();
+}
+
+function showResult (xml) {
+    var txt = "";
+    path ="/college/student/name";
+    var nodes =xml.evaluate (path, xml, null, XPathResult.ANY_TYPE, null); 
+    var result= nodes.iterateNext();
+    while (result) {
+        txt += result.childNodes [0].nodeValue + "<br>";
+        result = nodes.iterateNext();
+    }
+    document.getElementById("demo1").innerHTML = txt;
+}
+
+function loadXMLDoc() { 
+    var xmlhttp= new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() { 
+        if (this.readyState ==4 && this.status==200) {
+    myFunction (this);
+    document.getElementById("demo2").innerHTML = this.responseText;
+        }
+    }; 
+    xmlhttp.open("GET","./xml/student.xml", true);
+    xmlhttp.send();
+}
+function myFunction (xml) {
+    var x, i, xmlDoc, table;
+    xmlDoc = xml.responseXML; 
+    table = "<tr><th>Rollno</th><th>Name</th><th>Branch</th><th>Year</th><th>Email</th><tr>";
+    x=xmlDoc.getElementsByTagName ("student");
+    for (i = 0; i < x.length; i++) {
+    table += "<tr><td>" + x[i].getElementsByTagName("rollno")[0].childNodes [0].nodeValue + "</td><td>" +
+x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +"</td><td>"+ x[i].getElementsByTagName("branch")[0].childNodes [0].nodeValue + "</td><td>" + + x[i].getElementsByTagName("year")[0].childNodes [0].nodeValue + "</td><td>" + x[i].getElementsByTagName("email")[0].childNodes [0].nodeValue  +"</td></tr>";
+} document.getElementById("demo").innerHTML = table;
+}
+</script>

@@ -37,7 +37,7 @@ color: white;
 #navLinks{
     display: none;
 }
-.sidenav-lg-css,.sidenav-lg-js,.sidenav-lg-jQuery{
+.sidenav-lg-css,.sidenav-lg-js,.sidenav-lg-jQuery,.sidenav-lg-xml{
   display: none;
 }
 .sidenav-lg-html{
@@ -118,10 +118,18 @@ color: white;
     max-width:50%;
     overflow: auto;
   }
+  code{
+    background-color: gainsboro;
+    border-radius: 5px;
+   padding: 7px;
+   display: block;
+  }
+  
 
   .card-header {
     padding: 0.5rem 1rem;
     margin-bottom: 0;
+    margin-top: auto;
     background-color: rgba(0, 0, 0, 0.03);
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   }
@@ -156,6 +164,7 @@ color: white;
     margin-left:0%;
 }
   }
+
 
 
 

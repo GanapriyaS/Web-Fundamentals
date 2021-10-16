@@ -1,0 +1,109 @@
+<style>
+
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+</style>
+
+<h3>XML XPath</h3>
+<ul>
+    <li>XPath stands for XML Path Language</li>
+    <li>XPath uses "path like" syntax to identify and navigate nodes in an XML document</li>
+    <li>XPath is a major element in the XSLT standard.</li>
+    <li>XPath contains over 200 built-in functions.</li>
+    <li>In XPath, there are seven kinds of nodes: element, attribute, text, namespace, processing-instruction, comment, and document nodes.</li>
+    <li>XML documents are treated as trees of nodes. The topmost element of the tree is called the root element.</li>
+    <li>XPath is a query language for navigating in XML documents.</li>
+    <li>XPath is a W3C ( World wide web consortium )</li>
+    <li>To find nodes in XML document or elements in HTML web page.</li>
+    <li>XPath uses path expressions to select nodes or node-sets in an XML document. The node is selected by following a path or steps.</li>
+</ul>
+
+<div class="card">\
+    <h5 class="card-header">XPath Nodes</h5>
+    <code>
+        &ltcollege> (root element node)<br>
+        &ltname>Rowling&lt/name> (element node)<br>
+        lang="en" (attribute node)<br>
+    </code>
+</div>
+	
+<table style="width:100%">
+    <tr>
+        <th>S.No</th>
+        <th>Expression</th>
+        <th>Description</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>nodename</td>
+        <td>Selects all nodes with the name "nodename"</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>/</td>
+        <td>Selects from the root node</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>//</td>
+        <td>Selects nodes in the document from the current node that match the selection no matter where they are</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>.</td>
+        <td>Selects the current node</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>..</td>
+        <td>Selects the parent of the current node</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>@</td>
+        <td>Selects attributes</td>
+    </tr>
+    <tr>
+        <hr>
+    <p>Note: If the path starts with a slash ( / ) it always represents an absolute path to an element!</p>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>college</td>
+        <td>Selects all nodes with the name "college"</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>/college</td>
+        <td>Selects the root element college</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>college/student</td>
+        <td>Selects all student elements that are children of college</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>//student</td>
+        <td>Selects all student elements no matter where they are in the document</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>college//student</td>
+        <td>Selects all student elements that are descendant of the college element, no matter where they are under the college element</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>//@lang</td>
+        <td>Selects all attributes that are named lang</td>
+    </tr>
+</table>
+<div class="card">
+    <p>Absolute XPath - /college/student[1]/name</p>
+    <p>Relative XPath - //*/student[1]/name</p>
+</div>

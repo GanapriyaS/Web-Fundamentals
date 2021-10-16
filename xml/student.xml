@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="student.xsl"?>
+<!DOCTYPE college SYSTEM "student.dtd">
+<college code="2005" name="GCT">
+  <student>
+    <rollno>101</rollno>
+    <name>Arun</name>
+    <branch>ME</branch>
+    <year>2005</year>
+    <email>arun@gmail.com</email>
+  </student>
+  <student>
+    <rollno>132</rollno>
+    <name>Sasi</name>
+    <branch>ECE</branch>
+    <year>2010</year>
+    <email>sasi@gmail.com</email>
+  </student>
+  <student>
+    <rollno>183</rollno>
+    <name>Priya</name>
+    <branch>CSE</branch>
+    <year>2011</year>
+    <email>priya@gmail.com</email>
+  </student>
+</college>

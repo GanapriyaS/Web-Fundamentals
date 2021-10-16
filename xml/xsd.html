@@ -1,0 +1,125 @@
+<h3>XSD Schema</h3>
+<ul>
+    <li>XML Schemas define the elements of your XML files.</li>
+    <li>A simple element is an XML element that contains only text. It cannot contain any other elements or attributes.</li>
+    <li>A simple element is an XML element that can contain only text. It cannot contain any other elements or attributes.</li>
+</ul>
+<div class="card">
+    <div class="card-header">SYNTAX</div>
+    <code>&ltxs:element name="xxx" type="yyy"/><br>&ltxs:attribute name="xxx" type="yyy"/> (for attribute )</code><br>
+    where xxx is the name of the element and yyy is the data type of the element.
+</div>
+<p>XML Schema has a lot of built-in data types.</p>
+<ul>
+    <li>xs:string</li>
+    <li>xs:decimal</li>
+    <li>xs:integer</li>
+    <li>xs:boolean</li>
+    <li>xs:date</li>
+    <li>xs:time</li>
+</ul>
+
+<div class="card">
+    <h5 class="card-header">Default values of Simple ELements</h5>
+    <p>A default value is automatically assigned to the element when no other value is specified.</p>
+    <code>&ltxs:element name="color" type="xs:string" default="red"/></code><br>
+    <h5 class="card-header">Fixed values of Simple ELements</h5>
+    <p>A fixed value is also automatically assigned to the element, and you cannot specify another value.</p>
+    <code>&ltxs:element name="color" type="xs:string" fixed="red"/></code>    
+</div>
+
+<h3>XSD Restrictions</h3>
+<p>Restrictions are used to define acceptable values for XML elements or attributes. Restrictions on XML elements are called facets.</p>
+
+<div class="card">
+    <h3 class="card-header">Restrictions on Values</h3>
+    <p>value of age cannot be lower than 0 or greater than 100</p>
+    <code>
+        <pre>
+&ltxs:element name="age">
+&ltxs:simpleType>
+    &ltxs:restriction base="xs:integer">
+    &ltxs:minInclusive value="0"/>
+    &ltxs:maxInclusive value="120"/>
+    &lt/xs:restriction>
+&lt/xs:simpleType>
+&lt/xs:element>
+</pre>
+    </code>
+    <hr>
+    <h3 class="card-header">Restrictions on a Set of Values</h3>
+    <p>To limit the content of an XML element to a set of acceptable values, we would use the enumeration constraint. Element called "car" with a restriction accepts Audi, Golf, BMW.</p>
+    <code>
+    <pre>
+&ltxs:element name="car">
+&ltxs:simpleType>
+    &ltxs:restriction base="xs:string">
+    &ltxs:enumeration value="Audi"/>
+    &ltxs:enumeration value="Golf"/>
+    &ltxs:enumeration value="BMW"/>
+    &lt/xs:restriction>
+&lt/xs:simpleType>
+&lt/xs:element>
+</pre>
+    </code>
+
+    <hr>
+    <h3 class="card-header">Restrictions on a Series of Values</h3>
+    <p>To limit the content of an XML element to define a series of numbers or letters that can be used, we would use the pattern constraint. Element called "letter" with a restriction accepts value is ONE of the LOWERCASE letters from a to z</p>
+    <code>
+    <pre>
+&ltxs:element name="letter">
+&ltxs:simpleType>
+    &ltxs:restriction base="xs:string">
+    &ltxs:pattern value="[a-z]"/>
+    &lt/xs:restriction>
+&lt/xs:simpleType>
+&lt/xs:element>
+</pre>
+    </code><br>
+    <p>Element called "letter" with a restriction acceptable value is THREE of the UPPERCASE letters from a to z</p>
+    <code>
+        &ltxs:pattern value="[A-Z][A-Z][A-Z]"/>
+    </code><br>
+    <p>Element called "letter" with a restriction acceptable value is THREE of the LOWERCASE OR UPPERCASE letters from a to z</p>
+    <code>
+        &ltxs:pattern value="[a-zA-Z][a-zA-Z][a-zA-Z]"/>
+    </code><br>
+    <p>Element called "letter" with a restriction acceptable value is ONE of the following letters: x, y, OR z</p>
+    <code>
+        &ltxs:pattern value="[xyz]"/>
+    </code><br>
+    <p>Element called "letter" with a restriction acceptable value is FIVE digits in a sequence, and each digit must be in a range from 0 to 9</p>
+    <code>
+        &ltxs:pattern value="[0-9][0-9][0-9][0-9][0-9]"/>
+    </code><br>
+    <p>Element called "letter" with a restriction acceptable value is zero or more occurrences of lowercase letters from a to z.</p>
+    <code>
+        &ltxs:pattern value="([a-z])*"/>
+    </code><br>
+    <p>Element called "letter" with a restriction acceptable value is one or more pairs of letters, each pair consisting of a lower case letter followed by an upper case letter. For example, "sToP" will be validated by this pattern, but not "Stop" or "STOP" or "stop"</p>
+    <code>
+        &ltxs:pattern value="([a-z][A-Z])+"/>
+    </code><br>
+    <p>Element called "letter" with a restriction acceptable value is male OR female</p>
+    <code>
+        &ltxs:pattern value="male|female"/>
+    </code>
+    <p>Element called "password" with a restriction. There must be exactly eight characters in a row and those characters must be lowercase or uppercase letters from a to z, or a number from 0 to 9</p>
+    <code>
+        &ltxs:pattern value="[a-zA-Z0-9]{8}"/>
+    </code><br>
+    <hr>
+    <h3 class="card-header">Restrictions on Length</h3>
+    <p>To limit the length of a value in an element, we would use the length, maxLength, and minLength constraints. Element called "password" with a restriction. The value must be exactly eight characters</p>
+    <code>
+        &ltxs:length value="8"/>
+    </code><br>
+    <p>Element called "password" with a restriction. The value must be minimum five characters and maximum eight characters</p>
+    <code>
+        &ltxs:minLength value="5"/><br>
+        &ltxs:maxLength value="8"/>
+    </code><br>
+</div>
+
+

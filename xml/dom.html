@@ -1,0 +1,156 @@
+<h3>XML DOM</h3>
+<style>
+
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+</style>
+<ul>
+    <li>The XML DOM is a standard for how to get, change, add, or delete XML elements.    </li>
+    <li>According to the XML DOM, everything in an XML document is a node:
+        <ul>
+            <li>The entire document is a document node</li>
+            <li>Every XML element is an element node</li>
+            <li>The text in the XML elements are text nodes</li>
+            <li>Every attribute is an attribute node</li>
+            <li>Comments are comment nodes</li>
+        </ul>
+    </li>
+    <li>The root node in the XML above is named &ltcollege</li>
+    <li>All other nodes in the document are contained within &ltcollege.</li>
+    <li>The root node &ltcollege holds 3 &ltstudent nodes.</li>
+    <li>The first <book> node holds the child nodes: &ltname>, &ltbranch>, &ltyear>, &ltrollno> and &ltemail>.</li>
+    <li>The child nodes contain one text node each, "Arun", "ME", "101", "2005", and "arun@gmail.com".</li>
+</ul>
+<img src="./img/xmldom.gif" width="350" height="350" alt="BOX MODEL">
+<h3>Accessing Nodes 3 Ways</h3>
+<ol>
+    <li>By using the getElementsByTagName() method</li>
+    <li>By looping through (traversing) the nodes tree.</li>
+    <li>By navigating the node tree, using the node relationships.</li>
+</ol>
+<div class="card">
+    <h5 class="card-header">getElementsByTagName() returns all elements with a specified tag name.</h5>
+    <code>node.getElementsByTagName("tagname");</code>
+    <p>e.g) x.getElementsByTagName("name"); (returns all &ltname> elements under the x element)<br>
+        xmlDoc.getElementsByTagName("name"); (return all  &ltname> elements in the XML document)</p>
+    <h5>getElementsByTagName() method returns a node list. A node list is an array of nodes.</h5>
+    <code>x = xmlDoc.getElementsByTagName("name");<br>y = x[2]; ( access the third &ltname> )
+    </code>
+    <p><i>Note: The index starts at 0.</i></p>
+</div>
+
+<div class="card">
+    <h5 class="card-header">DOM Node List Length</h5>
+    <p>The length property defines the length of a node list (the number of nodes).You can loop through a node list by using the length property.</p>
+    <code>var x = xmlDoc.getElementsByTagName("title");<br>
+        for (i = 0; i < x.length; i++) {<br>
+          // do something for each node<br>
+          }</code>
+</div>
+<h3>Node Types</h3>
+<ul>
+    <li>The documentElement property of the XML document is the root node.</li>
+    <li>The nodeName property of a node is the name of the node.</li>
+    <li>The nodeType property of a node is the type of the node.</li>
+</ul>
+<h3>Node Properties</h3>
+<p>In the XML DOM, each node is an object.Objects have methods and properties, that can be accessed and manipulated by JavaScript.</p>
+<ul>
+    <li>nodeName</li>
+    <li>nodeValue</li>
+    <li>nodeType</li>
+</ul>
+<div class="card">
+    <h5 class="card-header">nodeName Property</h5>
+    <p>The nodeName property specifies the name of a node.</p>
+    <ul>
+        <li>read-only</li>
+        <li>nodeName of an element node is the same as the tag name</li>
+        <li>nodeName of an attribute node is the attribute name</li>
+        <li>nodeName of a text node is always #text</li>
+        <li>nodeName of the document node is always #document</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h5 class="card-header">nodeValue Property</h5>
+    <p>The nodeValue property specifies the value of a node.</p>
+    <ul>
+        <li>nodeValue for element nodes is undefined</li>
+        <li>nodeValue for text nodes is the text itself</li>
+        <li>nodeValue for attribute nodes is the attribute value</li>
+    </ul>
+</div>
+<h3>Get value of an element</h3>
+<code>
+var x = xmlDoc.getElementsByTagName("name")[0].childNodes[0];<br>
+var txt = x.nodeValue;<br>
+</code>
+<h3>nodeType Property</h3>
+<ul>
+    <li>The nodeType property specifies the type of node.</li>
+    <li>nodeType is read only.</li>
+</ul>
+
+<table style="width:100%">
+    <tr>
+        <th>S.No</th>
+        <th>NodeName</th>
+        <th>NodeType</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>Element</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Attribute</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Text</td>
+        <td>3</td>
+    </tr><tr>
+        <td>4</td>
+        <td>Comment</td>
+        <td>8</td>
+    </tr><tr>
+        <td>5</td>
+        <td>Document</td>
+        <td>9</td>
+    </tr>
+</table>
+<h3>Navigating DOM Nodes</h3>
+<p>Accessing nodes in the node tree via the relationship between nodes, is often called "navigating nodes".</p>
+<p>In the XML DOM, node relationships are defined as properties to the nodes:</p>
+<ul>
+    <li>parentNode</li>
+    <li>childNodes</li>
+    <li>firstChild</li>
+    <li>lastChild</li>
+    <li>nextSibling</li>
+    <li>previousSibling</li>
+</ul>
+<code>
+    var x = xmlDoc.getElementsByTagName("student")[0];
+    console.log(x.parentNode.nodeName); => (OUTPUT: college)
+    <hr>
+    x = xmlDoc.getElementsByTagName("student")[0];<br>
+    xlen = x.childNodes.length;<br>
+    y = x.firstChild;<br>
+txt = "";<br>
+for (i = 0; i < xlen; i++) {<br>
+  // Process only element nodes (type 1)<br>
+  if (y.nodeType == 1) {<br>
+    txt += y.nodeName + "&ltbr>";<br>
+  }<br>
+  y = y.nextSibling;<br>
+}
+</code>

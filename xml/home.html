@@ -1,0 +1,119 @@
+<style>
+
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 6px;
+    }
+
+</style>
+<h3>XML</h3>
+<ul>
+    <li>XML stands for eXtensible Markup Language.</li>
+    <li>XML is a markup language much like HTML.</li> 
+    <li>XML was designed to store and transport data.</li>
+    <li>XML was designed to be self-descriptive.</li>
+    <li>XML is a W3C Recommendation.</li>
+</ul>
+<h3>XML Separates Data from HTML</h3>
+<ul>
+    <li>When displaying data in HTML, you should not have to edit the HTML file when the data changes.</li> 
+    <li>With XML, the data can be stored in separate XML files.</li>
+    <li>With a few lines of JavaScript code, you can read an XML file and update the data content of any HTML page</li>
+    <li>XML was designed to carry data, HTML was designed to display data, XML tags are not predefined like HTML tags</li>
+</ul>
+<div style="overflow: auto;">
+<img src="./img/xml.gif" width="500" height="300" alt="BOX MODEL">
+</div>
+<div class="card ">
+    <h5 class="card-header">SYNTAX</h5>
+    <code>
+        &ltroot><br>
+        &ltchild><br>
+        &ltsubchild>.....&lt/subchild><br>
+        &lt/child><br>
+        &lt/root><br>
+    </code>
+</div>
+<div class="card ">
+    <iframe src="./xml/book.xml"></iframe>
+    <code>
+        <pre>
+&lt?xml version="1.0" encoding="UTF-8"?> ----> prolog
+&ltbookstore> ----> root
+  &ltbook category="cooking"> ----> Element
+    &lttitle lang="en">Book1&lt/title> --ch
+    &ltauthor>Lawerence&lt/author>  -----i
+    &ltyear>2005&lt/year> ---------------l
+    &ltprice>30.00&lt/price>-------------d
+  &lt/book> ------> Element end
+  &ltbook category="children">
+    &lttitle lang="en">Book2&lt/title>
+    &ltauthor>William&lt/author>
+    &ltyear>2005&lt/year>
+    &ltprice>29.99&lt/price>
+  &lt/book>
+  &ltbook category="web">
+    &lttitle lang="en">Book3&lt/title>
+    &ltauthor>Ram&lt/author>
+    &ltyear>2003&lt/year>
+    &ltprice>39.95&lt/price>
+  &lt/book>
+&lt/bookstore>
+        </pre>
+<br>A prolog defines the XML version and the character encoding.
+    </code>
+</div>
+
+<h3>XML Syntax Rules</h3>
+<ul>
+    <li>XML Documents Must Have a Root Element.</li>
+    <li>XML Prolog</li>
+    <li>All XML Elements Must Have a Closing Tag</li>
+    <li>XML Tags are Case Sensitive</li>
+    <li>XML Elements Must be Properly Nested</li>
+    <li>White-space is Preserved in XML Well Formed XML</li>
+    <li>XML Attribute Values Must Always be Quoted</li>
+    <li>XML documents that conform to the syntax rules above are said to be "Well Formed" XML documents.</li>
+</ul>
+
+<h3>Entity References</h3>
+<ul>
+    <li>Some characters have a special meaning in XML.</li>
+    <li>If you place a character like "<" inside an XML element, it will generate an error because the parser interprets it as the start of a new element.</li>
+</ul>
+<div style="overflow: auto;">
+    There are 5 pre-defined entity references in XML:
+    <table style="width:auto">
+        <tr>
+            <td>& lt;</td>
+            <td><</td>
+            <td>less than</td>
+        </tr>
+        <tr>
+            <td>& gt;</td>
+            <td>></td>
+            <td>greater than</td>
+        </tr>
+        <tr>
+            <td>& amp;</td>
+            <td>'</td>
+            <td>apostrophe</td>
+        </tr>
+        <tr>
+            <td>& apos;</td>
+            <td>/</td>
+            <td>Division</td>
+        </tr>
+        <tr>
+            <td>& quot;</td>
+            <td>"</td>
+            <td>Quotation mark</td>
+        </tr>
+    </table>
+    </div>
+<h3>Comments</h3>
+<p>< !-- This is a comment --></p>
+
+

@@ -1,0 +1,191 @@
+<style>
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 6px;
+    }
+</style>
+
+<h3>ARRAY</h3>
+<ul>
+    <li>An array is a special variable, which can hold more than one value at a time.</li>
+    <li>You can access the values by referring to an index number.</li>
+</ul>
+
+<div style="overflow: auto;">
+    <table style="width:auto">
+        <tr>
+            <th>S.No</th>
+            <th>Topic</th>
+            <th>Description</th>
+            <th>Syntax</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Creating an array</td>
+            <td><ul>
+                <li>Using an array literal create a JS Array</li>
+                <li>Using the JS Keyword new</li>
+            </ul></td>
+            <td><ul>
+                <li>array_name = [item1,item2,...];</li>
+                <li>array_name = new Array(item1,item2,...);</li>
+            </ul></td>
+            <td><ul>
+                <li><code>fruits = ["apple","mango","banana"];</code></li>
+                Create array and then provide elements<br>
+                <code>
+                    fruits = [];<br>
+                    fruits[0] = "apple";<br>
+                    fruits[1] = "mango";<br>
+                    fruits[2] = "banana";<br><br>
+                </code>
+                <li><code>fruits = new Array("apple","mango","banana");</code></li>
+                
+            </ul></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Accessing array elements</td>
+            <td>access an array elements by referring to the index number.</td>
+            <td>array_name[index]</td>
+            <td><code>let a = fruits[0];</code><br>
+                <p id="access"></p>
+                <button type="button" onclick="access()">Access first element</button>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Changing an array element</td>
+            <td>change by referring to the index number.</td>
+            <td>array_name[index] = value;</td>
+            <td>fruits[0] = "pears";</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Access the Full Array</td>
+            <td>full array can be accessed by referring to the array name.</td>
+            <td>document.getElementById("id").innerHTML = array_name;</td>
+            <td><code>document.getElementById("id").innerHTML = fruits;</code>
+                <p id="fullarray"></p>
+                <button type="button" onclick="fullarray()">Access first element</button>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Length property</td>
+            <td>The length property of an array returns the length of an array(the no of array elements)</td>
+            <td>array_name.length</td>
+            <td><code>fruits[fruits.length-1];</code><br>
+                <p id="last"></p>
+                <button type="button" onclick="last()">Accessing last element by length property</button>
+            </td>
+        </tr>
+    </table>
+    </div>
+<br>
+    <div class="card">
+        <h5 class="card-header">Looping array elements</h5>
+        <p id="arr"></p>
+        <button type="button" onclick="arr()">Access elements</button><br><br>
+        <code>let flen = fruits.length;<br>
+            let text = "&ltul>";<br>
+            for (let i = 0; i < fLen; i++) <br>
+            { text + "&ltli>" + fruits[i] + "&lt/li>";}<br>
+            text + "&lt/ul>";<br>
+            document.getElementById("arr").innerHTML = text;<br>
+        </code>
+    </div>
+
+    <div class="card">
+        <h5 class="card-header">forEach</h5>
+        <ul>
+            <li>The forEach() method calls a function once for each element in an array, in order.</li>
+            <li>forEach() is not executed for array elements without values.</li>
+        </ul>
+        <p id="foreach"></p>
+        <button type="button" onclick="foreach()">Access elements</button><br><br>
+        <code>
+            let sum = "";<br>
+            fruits.forEach (myFunction);<br>
+            document.getElementById("foreach").innerHTML = sum;<br>
+            function myFunction(item) {<br>
+            sum += item;<br>
+            sum += ",";<br>
+            } <br>
+        </code>
+    </div>
+
+    <div class="card">
+        <h5 class="card-header">Adding array elements</h5>
+        <p>push() method</p>
+        <p id="push"></p>
+        <button type="button" onclick="push()">Add element</button><br><br>
+        <code>
+            fruits.push("Lemon");
+            <br>
+        </code>
+    </div>
+
+    <div class="card">
+        <h5 class="card-header">for..of</h5>
+        <p>loops through the values of an iterable object</p>
+        <p id="forof"></p>
+        <button type="button" onclick="forof()">Access elements</button><br><br>
+        <code>
+            for (x of fruits){<br>
+                document.write(x + "&ltbr>");<br>
+            }<br>
+        </code>
+    </div>
+
+<script>
+    fruits = new Array("apple","mango","banana");
+    function access(){
+        let x= fruits[0];
+        document.getElementById("access").innerHTML=x;
+    }
+
+    function fullarray(){
+        document.getElementById("fullarray").innerHTML = fruits;
+    }
+
+    function last(){
+        document.getElementById("last").innerHTML = fruits[fruits.length-1];
+    }
+    function arr(){
+        let flen = fruits.length;
+        let text = "<ul>";
+        for (let i = 0; i < flen; i++) 
+        { 
+            text += "<li>" + fruits[i] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("arr").innerHTML = text;
+    }
+    function foreach(){
+            let sum = "";
+            fruits.forEach (myFunction);
+            document.getElementById("foreach").innerHTML = sum;
+            function myFunction(item) {
+            sum += item;
+            sum += ",";
+            }
+    }
+    function push(){
+        fruits.push("Lemon");
+        document.getElementById("push").innerHTML = fruits;
+    }
+    function forof(){
+            var x="";
+            let sum ="";
+            for (x of fruits){
+                sum += x;
+                sum += ",";
+            }
+            document.getElementById("forof").innerHTML = sum;
+    }
+    
+</script>

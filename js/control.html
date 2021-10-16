@@ -1,0 +1,103 @@
+<h3>CONTROL STATEMENTS</h3>
+<p>Conditional statements are used to perform different actions based on different conditions.</p>
+<ul>
+    <li>Use if to specify a block of code to be executed, if a specified condition is true</li> 
+    <li>Use else to specify a block of code to be executed, if the same condition is false</li>
+    <li>Use else if to specify a new condition to test, if the first condition is false</li>
+    <li>Use switch to specify many alternative blocks of code to be executed</li>
+</ul>
+
+<h3>SYNTAX</h3>
+<code>
+    if (condition) {<br>
+        // block of code to be executed if the condition is true<br>
+    }<br><br>
+    if (condition) {<br>
+        // block of code to be executed if the condition is true } <br>
+    else { <br>
+        // block of code to be executed if the condition is false<br>
+    }<br><br>
+    if (condition1) {<br>
+    // block of code to be executed if condition is true } <br>
+    else if (condition2){    <br>
+    // block of code to be executed if the conditionl is false and condition2 is true  <br>  
+    } <br>
+    else {<br>
+    // block of code to be executed if the condition is false and condition2 is false<br>
+    }<br>
+</code>
+
+<div class="card">
+    <h5 class="card-header">EXAMPLES</h5><br>
+    Name : <input type="text" id="name" name="name"><br>
+    Tamil: <input type="number" id="m1" name="m1"><br/>
+    English: <input type="number" id="m2" name="m2"><br/>
+    Maths: <input type="number" id="m3" name="m3"><br/> 
+    Science: <input type="number" id="m4" name="m4"><br/> 
+    Social: <input type="number" id="m5" name="m5"><br/><br>
+    Grade: <span id="grd"></span><br><br>
+    <button type="button" onclick="result()">Result</button><br><br>
+    Number1: <input type="number" id="n1"><br/>
+    Number2: <input type="number" id="n2" ><br/>
+    operator: <input type="text" id="n3" placeholder="+,-,/,*,%"><br><br>
+    Output: <span id="out"></span><br><br> 
+    <button type="button" onclick="calcualte()">Calculate</button> <br>
+</div>
+
+<script>
+    function result(){
+        var name = document.getElementById("name").value;
+        if(name == null || name==""){
+            alert("Name cannot be blank");
+            return false;
+        }
+        var m11=Number (document.getElementById("m1").value); 
+        var m12=Number(document.getElementById("m2").value);
+        var m13=Number (document.getElementById("m3").value);
+        var m14=Number (document.getElementById("m4").value);
+        var m15=Number (document.getElementById("m5").value);
+        var tot = m11+m12+m13+m14+m15;
+        var avgr=tot/5;
+        var grade="";
+        
+        if(avgr >=90){
+            grade="S";
+        }
+        else if(avgr>=80 && avgr<90){
+        grade="A";
+        }
+        else if(avgr>70 && avgr<80){
+            grade="B";
+        } else{
+        grade="F";
+        }
+        document.getElementById("grd").innerHTML=grade;
+    }
+
+    function calcualte(){
+        var n1=Number (document.getElementById("n1").value); 
+        var n2=Number(document.getElementById("n2").value);
+        var n3=document.getElementById("n3").value;
+        var out;
+        switch (n3){
+            case '+':
+                out=n1+n2;
+                break;
+            case '/':
+                out=n1/n2;
+                break;
+            case '-':
+                out=n1-n2;
+                break;
+            case '*':
+                out=n1*n2;
+                break;
+            case '%':
+                out=n1%n2;
+                break;
+            default:
+                out="Only +,-,*,/,% Operators accepted."
+        }
+    document.getElementById("out").innerHTML = out;
+    }
+</script>

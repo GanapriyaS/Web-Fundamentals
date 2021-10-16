@@ -1,0 +1,57 @@
+<h3>LOOPS</h3>
+<ul>
+    <li>For Loop</li>
+    <li>While Loop</li>
+    <li>Do while Loop</li>
+</ul>
+
+<h3>FOR LOOP</h3>
+<p>Loops can execute a block of code a number of times.</p>
+<code>
+    for (statement 1; statement 2; statement 3) <br>
+    { <br>
+        // code block to be executed <br>
+    }<br>
+</code>
+<ul>
+<li>Statement 1 is executed (one time) before the execution of the code block.</li>
+<li>Statement 2 defines the condition for executing the code block.</li>
+<li>Statement 3 is executed (every time) after the code block has been executed.</li>
+</ul>
+
+<h3>WHILE LOOP</h3>
+<p>Loops can execute a block of code as long as a specified condition is true.</p>
+<code>
+    while (condition)<br>
+    { <br>
+        // code block to be executed <br>
+    }<br>
+</code>
+
+<div class="card">
+    <h5 class="card-header">EXAMPLES</h5>
+    <p id="result"></p>
+    <button type="button" onclick="forloop()">for loop</button><br><br>
+    <button type="button" onclick="whileloop()">while loop</button><br><br>
+</div>
+
+<script>
+    function forloop(){
+        var count;
+        var for_result="";
+        for(count=0;count<=5;count++){
+            for_result+=" "+count;
+        }           
+        document.getElementById("result").innerHTML=for_result; 
+    }
+    function whileloop(){
+        var j=0;
+        var while_result='';
+                    while(j<20){
+                    if(j==5)break;
+                    while_result+=" "+j;
+                    j++;
+                  }
+                  document.getElementById("while").innerHTML=while_result;
+    }
+</script>

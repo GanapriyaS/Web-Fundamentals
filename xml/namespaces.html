@@ -1,0 +1,111 @@
+<h3>XML Namespaces</h3>
+<ul>
+    <li>XML Namespaces provide a method to avoid element name conflicts.</li>
+    <li>A Namespace is a set of unique names</li>
+    <li>mechanism by which element and attribute name can be assigned to a group.</li>
+</ul>
+
+<h3>Name Conflicts</h3>
+<p>In XML, element names are defined by the developer. This often results in a conflict when trying to mix XML documents from different XML applications.</p>
+<p>Example: 2 tables</p>
+<div class="card">
+  <h5 class="card-header">Name conflicts in XML can easily be avoided using a name prefix.</h5>
+<code>
+    &lttable>
+        &lttr><br>
+          &lttd>Apples&lt/td><br>
+          &lttd>Bananas&lt/td><br>
+        &lt/tr><br>
+      &lt/table><br><br>
+
+      &lttable><br>
+        &ltname>Table&lt/name><br>
+        &ltwidth>80&lt/width><br>
+        &ltlength>120&lt/length><br>
+      &lt/table><br><br>
+    <hr>
+      <pre>
+&ltroot>
+&lth:table>
+  &lth:tr>
+    &lth:td>Apples&lt/h:td>
+    &lth:td>Bananas&lt/h:td>
+  &lt/h:tr>
+&lt/h:table>
+
+&ltf:table>
+  &ltf:name>African Coffee Table&lt/f:name>
+  &ltf:width>80&lt/f:width>
+  &ltf:length>120&lt/f:length>
+&lt/f:table>
+&lt/root>
+      </pre>
+</code>
+</div>
+
+<p>XML Namespaces - The xmlns Attribute</p>
+<div class="card">
+  <h5 class="card-header">SYNTAX</h5>
+  <code>&ltelement xmlns:name = "URL"></code>
+  <ul>
+    <li>Namespace starts with the keyword xmlns</li>
+    <li>Word name is Namespace prefix</li>
+    <li>URL is namespace identifier</li>
+  </ul>
+</div>
+<ul>
+  <li>When using prefixes in XML, a namespace for the prefix must be defined.</li>
+  <li>The namespace can be defined by an xmlns attribute in the start tag of an element.</li>
+  <li>The namespace declaration has the following syntax. xmlns:prefix="URI".</li>
+</ul>
+<div class="card">
+  <h5 class="card-header">
+    <ul>
+      <li>The xmlns attribute in the first &lttable> element gives the h: prefix a qualified namespace.</li>
+      <li>The xmlns attribute in the second &lttable> element gives the f: prefix a qualified namespace.</li>
+      <li>When a namespace is defined for an element, all child elements with the same prefix are associated with the same namespace.</li>
+    </ul>
+  </h5>
+<code>
+  <h5>Default namespaces</h5>
+  <p>Defining a default namespace for an element saves us from using prefixes in all the child elements.</p>
+  <p>xmlns = "namespaceURI"</p>
+  &lttable  xmlns="http://domain1.com">
+  &lttr><br>
+    &lttd>Apples&lt/td><br>
+    &lttd>Bananas&lt/td><br>
+  &lt/tr><br>
+&lt/table><br><br>
+
+&lttable  xmlns="http://domain2.com"><br>
+  &ltname>Table&lt/name><br>
+  &ltwidth>80&lt/width><br>
+  &ltlength>120&lt/length><br>
+&lt/table><br><br>
+<hr>
+      <pre>
+&ltroot>
+&lth:table xmlns:h="http://domain1.com">
+  &lth:tr>
+    &lth:td>Apples&lt/h:td>
+    &lth:td>Bananas&lt/h:td>
+  &lt/h:tr>
+&lt/h:table>
+
+&ltf:table  xmlns:f="https://domain2.com">
+  &ltf:name>African Coffee Table&lt/f:name>
+  &ltf:width>80&lt/f:width>
+  &ltf:length>120&lt/f:length>
+&lt/f:table>
+&lt/root>
+      </pre>
+<hr>
+<p>Namespaces can be declared in XML root element</p>
+&ltroot xmlns:h="http://www.w3.org/TR/html4/"
+xmlns:f="https://www.w3schools.com/furniture">
+.......
+&lt/root>
+</code>
+<h5 class="card-footer">The namespace URI is not used by the parser to look up information.The purpose of using an URI is to give the namespace a unique name. However, companies often use the namespace as a pointer to a web page containing namespace information.</h5>
+<p>Note : A Uniform Resource Identifier (URI) is a string of characters which identifies an Internet Resource. The most common URI is the Uniform Resource Locator (URL) which identifies an Internet domain address. Another, not so common type of URI is the Uniform Resource Name (URN).</p>
+</div>

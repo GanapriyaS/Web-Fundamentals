@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="college">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="student">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="rollno" type="xs:integer" />
+              <xs:element name="name" type="xs:string" />
+              <xs:element name="branch" type="xs:string" />
+              <xs:element name="year" type="xs:integer" />
+              <xs:element name="email" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="code" type="xs:integer" use="required" />
+      <xs:attribute name="name" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

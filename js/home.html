@@ -1,8 +1,60 @@
 <h3>JavaScript</h3>
-<p>Naming: can contain letters, digits, underscores, dollar signs, names begin with letters<br>
-    Case sensitive y not equal to Y <br>
-    Reserved words(keywords) not used 
-</p>
+<ul>
+    <li>All scripting languages are programming languages.</li>
+    <li>The scripting language is basically a language where instructions are written for a run time environment.</li> 
+    <li>They do not require the compilation step and are rather interpreted.</li>
+    <li>A scripting language is a programming language designed for integrating and communicating with other programming languages.</li>
+</ul>
+<h3>Client-side scripting</h3>
+<ul>
+    <li>Mostly deals with the user interface with which the user interacts in the web.</li>
+    <li>It is mostly a browser, in the user's machine, that runs the code.</li>
+</ul>
+<h3>&ltscript></h3>
+<ul>
+    <li>JavaScript code is inserted between &ltscript> and &lt/script> tags.</li> 
+    <li>A JavaScript function is a block of JavaScript code, that can be executed when "called" for.</li>
+    <li>For example, a function can be called when an event occurs, like when the user clicks a button.</li>
+</ul>
+<h3>External JavaScript</h3>
+<p>Scripts can alsp o be placed in external files</p>
+
+<h3>JavaScript Display Possibilities</h3>
+<ul>
+    <li> Writing into an HTML element, using innerHTML.
+        <ul>
+            <li>To access an HTML element, JavaScript can use the document.getElementById(id) method.</li>
+            <li>The id attribute defines the HTML element.</li>
+            <li>The innerHTML property defines the HTML content.</li>
+        </ul>
+    </li> 
+    <li>Writing into the HTML output using document.write().</li>
+    <ul>
+        <li>For testing purposes, it is convenient to use document.write()</li>
+        <li>Using document.write() after an HTML document is loaded, will delete all existing HTML</li>
+    </ul>
+    <li>Writing into an alert box, using window.alert(). You can use an alert box to display data
+    </li>
+</ul>
+<div class="card">
+    <h5 class="card-header">EXAMPLES</h5>
+    <br>
+    <button type="button" onclick="document.write('document.write')">Write</button>
+    <button type="button" onclick="alert('Alert appeared')">Alert</button>
+    <p id="display">Before clicking</p>
+    <button type="button" onclick="display()">innerHTML</button>
+    <br><br>
+    <code>&ltbutton type="button" onclick="document.write(input)"> Sample &lt/button><br>
+        &ltbutton type="button" onclick="alert(input)"> Alert &lt/button><br><br>
+        &ltbutton type="button" onclick="display()"> Function &lt/button><br>
+        &ltscript><br>
+        function display(){<br>
+            document.getElementById("display").innerHTML="After clicking - Paragraph Changed"<br>
+        }<br>
+        &lt/script>
+    </code>
+</div>
+
 <p>Javascript datatypes</p>
 <ul>
     <li>numbers => var age=16</li>
@@ -19,3 +71,9 @@
     <li>!= not equal</li>
     <li>!==  not equal value or equal type</li>
 </ul>
+
+<script>
+    function display(){
+        document.getElementById("display").innerHTML="After clicking - Paragraph Changed"
+    }
+</script>

@@ -33,10 +33,11 @@
         <nav>
         <ul class="navbar">
             <li id="logo"><a  href="#home">LOGO</a></li>
-            <li ><a  href="javascript:void(0);" onclick="showNavBarlg('html','css','js','jQuery')">HTML</a></li>
-            <li><a  href="javascript:void(0);" onclick="showNavBarlg('css','html','js','jQuery')">CSS</a></li>
-            <li><a  href="javascript:void(0);" onclick="showNavBarlg('js','html','css','jQuery')">JS</a></li>
-            <li><a  href="javascript:void(0);" onclick="showNavBarlg('jQuery','html','css','js')">jQuery</a></li>
+            <li ><a  href="javascript:void(0);" onclick="showNavBarlg('html','css','js','jQuery','xml')">HTML</a></li>
+            <li><a  href="javascript:void(0);" onclick="showNavBarlg('css','html','js','jQuery','xml')">CSS</a></li>
+            <li><a  href="javascript:void(0);" onclick="showNavBarlg('js','html','css','jQuery','xml')">JS</a></li>
+            <li><a  href="javascript:void(0);" onclick="showNavBarlg('jQuery','html','css','js','xml')">jQuery</a></li>
+            <li><a  href="javascript:void(0);" onclick="showNavBarlg('xml','jQuery','html','css','js')">XML</a></li>
             <li><a  href="https://github.com/GanapriyaS/Web_Fundamentals" ><i class="fab fa-github-alt"> CODE</i></a></li>
             <li id="bar"><a href="javascript:void(0);" onclick="showNavBar()">&#9776;</a></li>
           </ul>
@@ -45,6 +46,7 @@
             <li><a  href="javascript:void(0);" onclick="openSideNav('sidebar-css')">CSS</a></li>
             <li><a  href="javascript:void(0);" onclick="openSideNav('sidebar-js')">JS</a></li>
             <li><a  href="javascript:void(0);" onclick="openSideNav('sidebar-jQuery')">jQuery</a></li>
+            <li><a  href="javascript:void(0);" onclick="openSideNav('sidebar-xml')">XML</a></li>
             <li><a  href="https://github.com/GanapriyaS/Web_Fundamentals"><i class="fab fa-github-alt"> CODE</i></a></li>
             
           </ul>
@@ -87,11 +89,29 @@
           </ul>
           <ul class="sidenav-lg-js sidenav-lg" id="js">
             <li><a href="javascript:void(0);" onclick="content('./js/home.html')">Home</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./js/variable.html')">Variables and Expressions</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./js/operator.html')">Operators</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./js/control.html')">Control Statements</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./js/loop.html')">Loops</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./js/array.html')">Array</a></li>
             <li><a href="javascript:void(0);" onclick="content('./js/example.html')">Examples</a></li>
           </ul>  
           <ul class="sidenav-lg-jQuery sidenav-lg" id="jQuery">
             <li><a href="javascript:void(0);" onclick="content('./jQuery/home.html')">Home</a></li>
             <li><a href="javascript:void(0);" onclick="content('./jQuery/examples.html')">Examples</a></li>
+          </ul>
+          <ul class="sidenav-lg-xml sidenav-lg" id="xml">
+            <li><a href="javascript:void(0);" onclick="content('./xml/home.html')">Home</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./xml/element.html')">XML Element</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./xml/attributes.html')">XML Attributes</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./xml/namespaces.html')">XML Namespaces</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./xml/dtd.html')">XML DTD</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./xml/schema.html')">XML Schema</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./xml/xsd.html')">XSD Schema</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./xml/xslt.html')">XML XSLT</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./xml/xpath.html')">XML XPath</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./xml/dom.html')">XML DOM</a></li>
+            <li><a href="javascript:void(0);" onclick="content('./xml/httpRequest.html')">XML HttpRequest</a></li>
           </ul>
           <div id="sidebar-html" class="sidenav-sm">
             <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav('sidebar-html')">×</a>
@@ -133,12 +153,32 @@
           <div id="sidebar-js" class="sidenav-sm">
             <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav('sidebar-js')">×</a>
             <a href="javascript:void(0);" onclick="content('./js/home.html')">Home</a>
+            <a href="javascript:void(0);" onclick="content('./js/variable.html')">Variables and Expressions</a>
+            <a href="javascript:void(0);" onclick="content('./js/operator.html')">Operators</a>
+            <a href="javascript:void(0);" onclick="content('./js/control.html')">Control Statements</a>
+            <a href="javascript:void(0);" onclick="content('./js/loop.html')">Loops</a>
+            <a href="javascript:void(0);" onclick="content('./js/array.html')">Array</a>
             <a href="javascript:void(0);" onclick="content('./js/example.html')">Examples</a>
           </div>
           <div id="sidebar-jQuery" class="sidenav-sm">
             <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav('sidebar-jQuery')">×</a>
             <a href="javascript:void(0);" onclick="content('./jQuery/home.html')">Home</a>
             <a href="javascript:void(0);" onclick="content('./jQuery/examples.html')">Examples</a>
+          </div>
+
+          <div id="sidebar-xml" class="sidenav-sm">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav('sidebar-xml')">×</a>
+            <a href="javascript:void(0);" onclick="content('./xml/home.html')">Home</a>
+            <a href="javascript:void(0);" onclick="content('./xml/element.html')">XML Element</a>
+            <a href="javascript:void(0);" onclick="content('./xml/attributes.html')">XML Attributes</a>
+            <a href="javascript:void(0);" onclick="content('./xml/namespaces.html')">XML Namespaces</a>
+            <a href="javascript:void(0);" onclick="content('./xml/dtd.html')">XML DTD</a>
+            <a href="javascript:void(0);" onclick="content('./xml/schema.html')">XML Schema</a>
+            <a href="javascript:void(0);" onclick="content('./xml/xsd.html')">XSD Schema</a>
+            <a href="javascript:void(0);" onclick="content('./xml/xslt.html')">XML XSLT</a>
+            <a href="javascript:void(0);" onclick="content('./xml/xpath.html')">XML XPath</a>
+            <a href="javascript:void(0);" onclick="content('./xml/dom.html')">XML DOM</a>
+            <a href="javascript:void(0);" onclick="content('./xml/httpRequest.html')">XML HttpRequest</a>
           </div>
     </section>
     <section id="main" style="padding-top: 50px;">
@@ -155,15 +195,17 @@
 
 
 <script>
-  function showNavBarlg(x,y,z,a) {
+  function showNavBarlg(x,y,z,a,c) {
     var u=document.getElementById(x);
     var v=document.getElementById(y);
     var w=document.getElementById(z);
     var b=document.getElementById(a);
+    var d=document.getElementById(c);
     u.style.display="block";
     v.style.display="none";
     w.style.display="none";
     b.style.display="none";
+    d.style.display="none";
   }
 
     function content(x){
