@@ -1,0 +1,142 @@
+<style>
+
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+
+</style>
+
+<h3>JS Date Objects</h3>
+<button type="button" onclick="date()">Click here to see effects</button><br><br>
+<div style="overflow:auto;">
+<table>
+    <tr>
+    <th>Method</th>
+    <th>Description</th>
+    </tr>
+    <tr>
+    <td>getFullYear()</td>
+    <td>Get the <strong>year</strong> as a four digit number (yyyy)</td>
+    <td id="demo1"></td>
+    </tr>
+    <tr>
+    <td>getMonth()</td>
+    <td>Get the <strong>month</strong> as a number (0-11)</td>
+    <td id="demo2"></td>
+    </tr>
+    <tr>
+    <td>getDate()</td>
+    <td>Get the <strong>day</strong> as a number (1-31)</td>
+    <td id="demo3"></td>
+    </tr>
+    <tr>
+    <td>getHours()</td>
+    <td>Get the <strong>hour</strong> (0-23)</td>
+    <td id="demo4"></td>
+    </tr>
+    <tr>
+    <td>getMinutes()</td>
+    <td>Get the <strong>minute</strong> (0-59)</td>
+    <td id="demo5"></td>
+    </tr>
+    <tr>
+    <td>getSeconds()</td>
+    <td>Get the <strong>second</strong> (0-59)</td>
+    <td id="demo6"></td>
+    </tr>
+    <tr>
+    <td>getMilliseconds()</td>
+    <td>Get the <strong>millisecond</strong> (0-999)</td>
+    <td id="demo7"></td>
+    </tr>
+    <tr>
+    <td>getTime()</td>
+    <td>Get the time - no of milliseconds (milliseconds since midnight January 1, 1970)</td>
+    <td id="demo8"></td>
+    </tr>
+    <tr>
+    <td>getDay()</td>
+    <td>Get the weekday as a number (0-6)</td>
+    <td id="demo9"></td>
+    </tr>
+    <tr>
+    <td>Date.now()</td>
+    <td>Get the time. ECMAScript 5.</td>
+    <td id="demo10"></td>
+    </tr>
+</table>
+</div>
+
+<div class="card">
+    <h5 class="card-header">Creating Data Objects</h5>
+    <ul>
+        <li>Data Objects are created with the new Date() constructor.</li>
+        <li>4 ways to create a new date object:
+            <ul>
+                <li>new Date()</li>
+                <li>new Date(year,month,day,hours,minutes,seconds,milliseconds)</li>
+                <li>new Date(milliseconds)</li>
+                <li>new Date(date string)</li>
+            </ul>
+        </li>
+    </ul>
+    <h5 class="card-header">new Date()</h5>
+    <p>Creates a new date object with the current date and time</p>
+    <hr>
+    <p id="demo11"></p>
+    <p>new Date(year, month, ...) => new Date(2018,11,24,10,33,30,0) creates a new date object with a specified date and time. 7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order):</p>
+    <p id="demo12"></p>
+    <hr>
+    <p>new Date(milliseconds) creates a new date object as zero time plus milliseconds: 01 January 1970, 00:00:00 Universal Time(UTC) plus 100 000 000 000 milliseconds is approximately 03 March 1973:</p>
+    <p id="demo13"></p>
+    <p>January 01 1970 minus 100 000 000 000 milliseconds is approximately October 31 1966:</p>
+    <p id="demo14"></p>
+    <p><i>Note: One day(24 hours) is 86,400,000 milliseconds.</i></p>
+    <hr>
+    <p>A Data Object can be created with a specified date and time</p>
+    <p id="demo15"></p>
+</div>
+
+<div class="card">
+    <h3>Date String Formats</h3>
+    <h5 class="card-header">Short Dates</h5>
+    <p>Short dates are written with an "MM/DD/YYYY"</p>
+    <p id="demo16"></p>
+    <code>const d = new Date("03/25/2015");</code>
+    <h5 class="card-header">Long Dates</h5>
+    <p>Long dates are most often written with a "MMM DD YYYY"</p>
+    <p id="demo17"></p>
+    <code>const d = new Date("Mar 25 2015");</code>
+</div>
+
+<div class="card">
+    <h5 class="card-header">Date.parse()</h5>
+    <p>Date.parse() returns the number of milliseconds between the date and January 1, 1970:</p>
+    <p id="demo18"></p>
+</div>
+
+<script>
+    function date(){
+        const d=new Date();
+    document.getElementById("demo1").innerHTML= d.getFullYear();
+    document.getElementById("demo2").innerHTML= d.getMonth();
+    document.getElementById("demo3").innerHTML= d.getDate();
+    document.getElementById("demo4").innerHTML= d.getHours();
+    document.getElementById("demo5").innerHTML= d.getMinutes();
+    document.getElementById("demo6").innerHTML= d.getSeconds();
+    document.getElementById("demo7").innerHTML= d.getMilliseconds();
+    document.getElementById("demo8").innerHTML= d.getTime();
+    document.getElementById("demo9").innerHTML= d.getDay();
+    document.getElementById("demo10").innerHTML= Date.now();
+    document.getElementById("demo11").innerHTML= d;
+    document.getElementById("demo12").innerHTML= new Date(2018,11,24,10,33,30,0);
+    document.getElementById("demo13").innerHTML= new Date(100000000000);
+    document.getElementById("demo14").innerHTML= new Date(-100000000000);
+    document.getElementById("demo15").innerHTML= new Date("October 13, 2014 11:13:00");
+    document.getElementById("demo16").innerHTML= new Date("03/25/2015");
+    document.getElementById("demo17").innerHTML= new Date("Mar 25 2015");
+    document.getElementById("demo18").innerHTML= Date.parse("March 21,2012");
+    }
+</script>

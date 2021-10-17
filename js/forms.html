@@ -1,0 +1,82 @@
+<h3>JavaScript Forms</h3>
+<h5>JavaScript Form Validation</h5>
+<p>HTML form validation can be done by JavaScript. If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted</p>
+<div class="card">
+    <h5 class="card-header">Validate Empty Input</h5><br>
+    <form name="form1" onsubmit="return validateForm()">
+        Name: <input type="text" name="fname" id="fname" onfocus="focusin()" onfocusout="focusout()">
+        <input type="submit" value="Submit">
+      </form> 
+    <p>Please input a number between 1 and 10:</p>
+    <input id="num">
+    <button type="button" onclick="validateNum()">Submit</button>
+    <p id="demo"></p>
+</div>
+
+<h3>Data Validation</h3>
+<p>Data validation is the process of ensuring that user input is clean, 
+correct, and useful.</p>
+<p>Typical validation tasks are:</p>
+<ul>
+  <li>has the user filled in all required fields?</li>
+  <li>has the user entered a valid date?</li>
+    <li>has the user entered text in a numeric field?</li>
+</ul>
+<p>Most often, the purpose of data validation is to ensure correct user input.</p>
+<p>Validation can be defined by many different methods, and deployed in many 
+different ways.</p>
+<p><strong>Server side validation</strong> is performed by a web server, after input has been sent to the 
+server.</p>
+<p><strong>Client side validation</strong> is performed by a web browser, before input is sent to a web server.</p>
+
+<h3>BUILT-IN FORM VALIDATION</h3>
+<ul>
+    <li>required Specifies whether a form field needs to be filled in before the form can be submitted</li>
+    <li>minlength and maxlength. Specifies the minimum and maximum length of textual data (strings)</li>
+    <li>min and max Specifies the minimum and maximum values of numerical input types</li>
+    <li>type Specifies whether the data needs to be a number, an email address, or some other specific preset type.</li>
+    <li>pattern: Specifies a regular expression that defines a pattern the entered data needs to follow.</li>
+</ul>
+
+<div class="card">
+    <form>
+<input type="text" placeholder="required" required="required">
+<input type="text"  minlength="5" placeholder="min length is 5">
+<input type="number" placeholder="min value is 18" min="18">
+<input type="tel" id="aa" name="aa" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" placeholder="Aadhar number">
+<input type="submit">
+</form>
+
+
+<script>
+    function focusin(){
+        var x = document.getElementById("fname");
+        x.style.background="yellow";
+    }
+
+
+    function focusout(){
+        var x = document.getElementById("fname");
+        x.value=x.value.toUpperCase();
+        x.style.background="pink";
+    }
+
+    function validateForm() {
+        let x = document.forms["form1"]["fname"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+    }
+
+    function validateNum() {
+    let x = document.getElementById("num").value;
+    let text;
+    if (isNaN(x) || x < 1 || x > 10) {
+        text = "Input not valid";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("demo").innerHTML = text;
+    }
+</script>

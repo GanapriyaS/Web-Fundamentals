@@ -1,0 +1,151 @@
+<style>
+
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 4px;
+    }
+
+</style>
+<h3>JS HTML DOM Events</h3>
+<p>Examples of HTML events:</p>
+<ul>
+  <li>When a user clicks the mouse</li>
+  <li>When a web page has loaded</li>
+  <li>When an image has been loaded</li>
+  <li>When the mouse moves over an element</li>
+  <li>When an input field is changed</li>
+  <li>When an HTML form is submitted</li>
+  <li>When a user strokes a key </li>
+</ul>
+
+<div style="overflow: auto;">
+    <table style="width:100%">
+        <tr>
+            <td colspan="3">Mouse events</td>
+        </tr>
+        <tr>
+            <th>Event Performed</th>
+            <th>Event Handler</th>
+            <th>Description</th>
+        </tr>
+    
+        <tr>	
+            <td>click</td>
+            <td>onclick</td>
+            <td>When mouse click on an element</td>
+        </tr>
+        <tr>
+            <td>mouseover</td>
+            <td>onmouseover</td>
+            <td>When the cursor of the mouse comes over the element</td>
+        </tr>
+        <tr>
+            <td>mouseout</td>
+            <td>onmouseout</td>
+            <td>When the cursor of the mouse leaves an element</td>
+        </tr>
+        <tr>
+            <td>mousedown</td>
+            <td>onmousedown</td>
+            <td>When the mouse button is pressed over the element</td>
+        </tr>
+        <tr>
+            <td>mouseup</td>
+            <td>onmouseup</td>
+            <td>When the mouse button is released over the element</td>
+        </tr>
+        <tr>
+            <td>mousemove</td>
+            <td>onmousemove</td>
+            <td>When the mouse movement takes place.</td>
+        </tr>
+        <tr>
+            <td colspan="3">Keyboard events</td>
+        </tr>	
+        <tr>
+            <th>Event Performed</th>
+            <th>Event Handler</th>
+            <th>Description</th>  
+        </tr>
+        <tr>
+            <td>Keydown & Keyup</td>
+            <td>onkeydown & onkeyup</td>
+            <td>When the user press and then release the key</td>
+        </tr>
+        <tr>
+            <td colspan="3">Form events</td>
+        </tr>	
+        <tr>
+            <th>Event Performed</th>
+            <th>Event Handler</th>
+            <th>Description</th>  
+        </tr>
+        <tr> 
+            <td>focus</td>
+            <td>onfocus</td>
+            <td>When the user focuses on an element</td>
+        </tr>
+        <tr>
+            <td>submit</td>
+            <td>onsubmit</td>
+            <td>When the user submits the form</td>
+        </tr>
+        <tr>
+            <td>blur</td>
+            <td>onblur</td>
+            <td>When the focus is away from a form element</td>
+        </tr>
+        <tr>
+            <td>change</td>
+            <td>onchange</td>
+            <td>When the user element modifies or changes the value of a form element</td>
+        </tr>
+
+        <tr>
+            <td colspan="3">Window/Document events</td>
+        </tr>	
+        <tr>
+            <th>Event Performed</th>
+            <th>Event Handler</th>
+            <th>Description</th>  
+        </tr>
+        <tr> 
+            <td>load</td>
+            <td>onload</td>
+            <td> When the browser finishes the loading of the page</td>
+        </tr>
+        <tr>
+            <td>unload</td>
+            <td>onunload</td>
+            <td>When the visitor leaves the current webpage, browser unloads it</td>
+        </tr>
+        <tr>
+            <td>resize</td>
+            <td>onresize</td>
+            <td>When the visitor resizes the window of the browser</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h5 class="card-header">addEventListener()</h5>
+    <ul>
+        <li>The addEventListener() method is used to attach an event handler to a particular element. It does not override the existing event handlers.</li>
+        <li>The addEventListener() method is an inbuilt function of JavaScript. We can add multiple event handlers to a particular element without overwriting the existing event handlers.</li>
+    </ul>
+    <p id="mouse">Example: Bring mouse here for mouseout and mouseover</p>
+    <p id="demo"></p>
+</div>
+
+<script>
+    document.getElementById("mouse").addEventListener("mouseover",fun);
+    function fun(){
+        document.getElementById("demo").innerHTML="Mouse Over";
+    }
+    document.getElementById("mouse").addEventListener("mouseout",fun1);
+    function fun1(){
+        document.getElementById("demo").innerHTML="";
+    }
+</script>

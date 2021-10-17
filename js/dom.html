@@ -1,0 +1,278 @@
+<style>
+
+    table,td,th{
+        border:1px solid gray;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 4px;
+    }
+
+</style>
+
+<h3>Document Object Model (DOM) </h3>
+<p>When a web page is loaded, the browser creates a Document Object Model of the page. The HTML DOM model is constructed as a tree of Objects</p>
+<img src="./img/jsdom.gif" width="500" height="300" alt="BOX MODEL">
+
+<h3>HTML DOM</h3>
+<p>HTML DOM is a standard object model and programming interface for HTML. The HTML DOM is a standard for how to get, change, add, or delete HTML elements. It defines:</p>
+<ul>
+    <li>The HTML elements as objects</li>
+    <li>The properties of all HTML elements</li>
+    <li>The methods to access all HTML elements</li>
+    <li>The events for all HTML elements</li>
+</ul>
+
+<p>The HTML DOM is an API (Programming Interface) for JavaScript</p>
+<ul>
+    <li>JavaScript can add/change/remove HTML elements/attributes</li>
+    <li>JavaScript can add/change/remove CSS styles</li>
+    <li>JavaScript can react to HTML events</li>
+    <li>JavaScript can add/change/remove HTML events.</li>
+</ul>
+<div class="card">
+    <h5 class="card-header">getElementById Method</h5>
+    <p>Way to access an HTML element is to use the id of the element.</p>
+    <h5 class="card-header">innerHTML Property</h5>
+    <p>The easiest way to get the content of an element is by using the innerHTML property. The innerHTML property is useful for getting or replacing the content of HTML elements.</p>
+    <button onclick="bgChange()">Background Change</button>
+    <p id="demo">Set color,fontfamil and fontsize by JS</p>
+</div>
+
+
+
+<div style="overflow: auto;">
+<table style="width:100%">
+    <tr>
+        <td colspan="3">Find HTML Elements</td>
+    </tr>
+    <tr>
+        <th>Method</th>
+        <th colspan="2">Description</th>
+    </tr>
+
+    <tr>	
+        <td>document.getElementById(id)</td>
+        <td colspan="2">Find an element by element id</td>
+    </tr>
+    <tr>
+        <td>document.getElementsByTagName(name)</td>
+        <td colspan="2">Find elements by tag name</td>
+    </tr>
+    <tr>
+        <td>document.getElementsByClassName(name)</td>
+        <td colspan="2">Find elements by class name</td>
+    </tr>
+    <tr>
+        <td colspan="3">Change HTML Elements</td>
+    </tr>	
+    <tr>
+        <th>Property</th>
+        <th colspan="2">Description</th>
+    </tr>
+    <tr>
+        <td>element.innerHTML =  new html content</td>
+        <td colspan="2">Change the inner HTML of an element</td>
+    </tr>
+    <tr>
+        <td>element.attribute = new value</td>
+        <td colspan="2">Change the attribute value of an HTML element</td>
+    </tr>
+    <tr>
+        <td>element.style.property = new style</td>
+        <td colspan="2">Change the style of an HTML element</td>
+    </tr>
+    <tr>
+        <th>Method</th>
+        <th colspan="2">Description</th>
+    </tr>	
+    <tr>
+        <td>element.setAttribute(attribute, value)</td>
+        <td colspan="2">Change the attribute value of an HTML element</td>
+    </tr>
+    <tr>
+        <td colspan="3">Add and Delete Elements</td>
+    </tr>
+    <tr>
+        <th>Method</th>
+        <th colspan="2">Description</th>
+    </tr>
+    <tr>	
+        <td>document.createElement(element)</td>
+        <td colspan="2">Create an HTML element</td>
+    </tr>
+    <tr>
+        <td>document.removeChild(element)</td>
+        <td colspan="2">Remove an HTML element</td>
+    </tr>
+    <tr>
+        <td>document.appendChild(element)</td>
+        <td colspan="2">Add an HTML element</td>
+    </tr>
+    <tr>
+        <td>document.replaceChild(new, old)</td>
+        <td colspan="2">Replace an HTML element</td>
+    </tr>
+    <tr>
+        <td>document.write(text)</td>
+        <td colspan="2">Write into the HTML output stream</td>
+    </tr>
+    <tr>
+        <td colspan="3">Add Event Handlers</td>
+    </tr>
+    <tr>
+        <th>Method</th>
+        <th colspan="2">Description</th>
+    </tr>
+    <tr>
+        <td>document.getElementById(id).onclick = function(){code}</td>
+        <td colspan="2">Adding event handler code to an onclick event</td>
+    </tr>
+    <tr>
+        <td colspan="3">Find HTML Objects<br>
+            The first HTML DOM Level 1 (1998), defined 11 HTML objects, object collections, and properties. These are still valid in HTML5. Later, in HTML DOM Level 3, more objects, collections, and properties were added.</td>
+    </tr>
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+        <th>DOM</th>
+        </tr>
+        <tr>
+          <td>document.anchors</td>
+          <td>Returns all &lt;a&gt; elements that have a name attribute</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>document.applets</td>
+          <td><span class="deprecated">Deprecated</span></td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>document.baseURI</td>
+          <td>Returns the absolute base URI of the document</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.body</td>
+          <td>Returns the &lt;body&gt; element </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>document.cookie</td>
+          <td>Returns the document's cookie</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>document.doctype</td>
+          <td>Returns the document's doctype</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.documentElement</td>
+          <td>Returns the &lt;html&gt; element </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.documentMode</td>
+          <td>Returns the mode used by the browser</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.documentURI</td>
+          <td>Returns the URI of the document </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.domain</td>
+          <td>Returns the domain name of the document server </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>document.domConfig</td>
+          <td><span class="deprecated">Obsolete.</span></td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.embeds</td>
+          <td>Returns all &lt;embed&gt; elements</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.forms</td>
+          <td>Returns all &lt;form&gt; elements </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>document.head</td>
+          <td>Returns the &lt;head&gt; element</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.images</td>
+          <td>Returns all &lt;img&gt; elements </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>document.implementation</td>
+          <td>Returns the DOM implementation</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.inputEncoding</td>
+          <td>Returns the document's encoding (character set)</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.lastModified</td>
+          <td>Returns the date and time the document was updated</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.links</td>
+          <td>Returns all &lt;area&gt; and &lt;a&gt; elements that have a href attribute</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>document.readyState</td>
+          <td>Returns the (loading) status of the document</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.referrer</td>
+          <td>Returns the URI of the referrer (the linking document)</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>document.scripts</td>
+          <td>Returns all &lt;script&gt; elements</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.strictErrorChecking</td>
+          <td>Returns if error checking is enforced</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>document.title</td>
+          <td>Returns the &lt;title&gt; element </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>document.URL</td>
+          <td>Returns the complete URL of the document </td>
+          <td>1</td>
+        </tr>
+    
+</table>
+</div>
+
+<script>
+    function bgChange(){
+        const color='gainsboro';
+        document.body.style.backgroundColor=color;        
+    }
+    document.getElementById("demo").style.color = "Orange";
+    document.getElementById("demo").style.fontFamily = "Arial";
+    document.getElementById("demo").style.fontSize = "larger";
+
+</script>
+</div>
