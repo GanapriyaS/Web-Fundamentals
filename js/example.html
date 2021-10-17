@@ -1,11 +1,10 @@
 
 <style>
     table,td,th{
-        box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.4);
+        border:1px solid gray;
         border-collapse: collapse;
         text-align: center;
         padding:10px;
-        background-color: whitesmoke
     }
 
     .model{
@@ -49,7 +48,7 @@
 <div >
     <h2>JavaScript Examples</h2>
     
-    <div style="overflow:auto;">
+    <div class="card " style="max-width:100%;">
         <script type="text/javascript">
             function changeText(change_text){
                 change_text.innerHTML="Changed text";
@@ -136,7 +135,7 @@
                         <td><input type="number" name="age" size=15></td>
                       </tr>
                       <tr>
-                        <td><input type="button" value="calculate" onclick="years(this.form)"></td>
+                        <td colspan="2"><input type="button" value="calculate" onclick="years(this.form)"></td>
                       </tr>
                       <tr>
                         <td>Your age multiply by 5:</td>
