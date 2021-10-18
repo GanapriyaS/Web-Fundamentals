@@ -12,7 +12,7 @@
 
 This website to learn basic web development fundamentals such as HTML, CSS, JavaScript, jQuery and XML with hands on live examples. 
 
-[Live Demo](https://codersaty.netlify.app/)
+[Live Demo](https://ganapriyas.github.io/Web-Fundamentals/)
 
 ## Technologies used 
 
